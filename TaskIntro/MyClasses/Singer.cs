@@ -1,10 +1,16 @@
-namespace OOP.MyClasses
+namespace TaskIntro.MyClasses
 {
     public class Singer
     {
+        private string Text = "hello";
         public Singer()
         {
-            Console.WriteLine("hello singer");
+
+        }
+
+        public static void Print()
+        {
+            Console.WriteLine("Text");
         }
     }
 }

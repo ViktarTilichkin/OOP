@@ -1,10 +1,16 @@
-namespace OOP.MyClasses
+namespace TaskIntro.MyClasses
 {
     public class Validator
     {
+        private string Text = "hello";
         public Validator()
         {
-            Console.WriteLine("hello Validator");
+
+        }
+
+        public static void Print()
+        {
+            Console.WriteLine("Validator");
         }
     }
 }
