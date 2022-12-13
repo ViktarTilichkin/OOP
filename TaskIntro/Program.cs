@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using System;
+using MyClasses;
 
 namespace TaskIntro 
 {
@@ -7,7 +7,8 @@ namespace TaskIntro
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
+            Console.WriteLine(Singer.Singer());
         }
     }
 }
