@@ -2,15 +2,24 @@ namespace TaskIntro.MyClasses
 {
     public class Singer
     {
-        private string Text = "hello";
-        public Singer()
+        // Реализуйте класс Singer, который будет иметь следующие свойства: name,
+        // surname. Также класс должен иметь метод GetАutograph (), который будет
+        // выводить “{Name} {Surname), с наилучшими пожеланиями”.
+        private string Name;
+        private string Surname;
+        public Singer() : this("name", "sername")
         {
-
+            Surname = "1";
+        }
+        public Singer(string name, string surname)
+        {
+            Name = name;
+            Surname = surname;
         }
 
-        public static void Print()
+        public void GetAutograph()
         {
-            Console.WriteLine("Text");
+            Console.WriteLine($"{Name} {Surname}, с наилучшими пожеланиями");
         }
     }
 }
