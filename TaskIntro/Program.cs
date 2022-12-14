@@ -7,11 +7,16 @@ namespace TaskIntro
     {
         static void Main(string[] args)
         {
-            Singer.Print();
-            Fibonacci.Print();
-            Validator.Print();
-            WordString.Print();
-            MathCalculation.Print();
+            Singer name = new Singer();
+            name.GetAutograph();
+
+            Fibonacci number = new Fibonacci(-1);
+            number.PrintFib();
+
+            MathCalculation num = new MathCalculation(5, 6, 8, 9, 2, -2, 52, 614, -888, -8, -9);
+            num.SumPositivenumbers();
+            
+
         }
     }
 }
