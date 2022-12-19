@@ -14,7 +14,10 @@ namespace TaskIntro.MyClasses
         {
 
         }
+        // public Validator()
+        {
 
+        }
         public static void Print()
         {
             Console.WriteLine("Text");
