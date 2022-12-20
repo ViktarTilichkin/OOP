@@ -48,7 +48,7 @@ public class Reader
         Console.WriteLine($"{Name} вернул книг: {countBook} шт.");
     }
     public override string ToString()
-    {
+    {   
         return string.Join(", ", Name, Facultet);
     }
 }
