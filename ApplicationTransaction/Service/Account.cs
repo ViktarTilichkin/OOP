@@ -70,14 +70,14 @@ public class Account
             System.Console.WriteLine("error input");
             return null;
         }
-        for (int i = 0; i < Users.Length; i++)
-        {
-            if (Users[i].Email == email)
-            {
-                System.Console.WriteLine("This email not available");
-                return null;
-            }
-        }
+        // for (int i = 0; i < Users.Length; i++)
+        // {
+        //     if (Users[i].Email == email)
+        //     {
+        //         System.Console.WriteLine("This email not available");
+        //         return null;
+        //     }
+        // }
         return new User(NextIdUsers++, name, pass, email);
 
     }

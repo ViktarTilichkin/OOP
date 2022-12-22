@@ -15,12 +15,12 @@ public class WorkflowTransaction
             new Transaction(4, 001,002, "lol" , 10, DateTime.Now.AddDays(-1)),
         };
     }
-    public void Show(User user)
+    public void Show(User? user)
     {
         bool chek = true;
         for (int i = 0; i < ArrayTransaction.Length; i++)
         {
-            if (user.Id == ArrayTransaction[i].UserId)
+            if (user?.Id == ArrayTransaction[i].UserId)
             {
                 chek = false;
                 Console.WriteLine(ArrayTransaction[i]);
@@ -31,7 +31,7 @@ public class WorkflowTransaction
             Console.WriteLine("не данных по пользователю");
         }
     }
-    public void SendTransaction(User user, int idToSend, string comment, decimal value)
+    public void SendTransaction(User? user, int idToSend, string comment, decimal value)
     {
         Transaction[] arrayTemp = new Transaction[ArrayTransaction.Length + 1];
         Array.Copy(ArrayTransaction, arrayTemp, ArrayTransaction.Length);
