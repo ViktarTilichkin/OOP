@@ -7,19 +7,23 @@ public class WorkflowTransaction
     private Transaction[] ArrayTransaction;
     public WorkflowTransaction()
     {
-        ArrayTransaction = new Transaction[4]
-        {
-            new Transaction(1, 002, 003,"hi" , 10, DateTime.Now.AddDays(-1) ),
-            new Transaction(2, 001,004, "hello" , 10, DateTime.Now.AddDays(-1)),
-            new Transaction(3, 004, 002,"heh" , 10, DateTime.Now.AddDays(-1)),
-            new Transaction(4, 001,002, "lol" , 10, DateTime.Now.AddDays(-1)),
-        };
+        ArrayTransaction = new Transaction[30];
+
+        ArrayTransaction[0] = new Transaction(1, 2, 3, "hi", 10, DateTime.Now.AddDays(-1));
+        ArrayTransaction[1] = new Transaction(2, 1, 4, "hello", 10, DateTime.Now.AddDays(-1));
+        ArrayTransaction[2] = new Transaction(3, 4, 2, "heh", 10, DateTime.Now.AddDays(-1));
+        ArrayTransaction[3] = new Transaction(4, 1, 2, "lol", 10, DateTime.Now.AddDays(-1));
+
     }
     public void Show(User? user)
     {
         bool chek = true;
         for (int i = 0; i < ArrayTransaction.Length; i++)
         {
+            if (ArrayTransaction[i] == null)
+            {
+                continue;
+            }
             if (user?.Id == ArrayTransaction[i].UserId)
             {
                 chek = false;
@@ -28,7 +32,7 @@ public class WorkflowTransaction
         }
         if (chek)
         {
-            Console.WriteLine("не данных по пользователю");
+            Console.WriteLine("нет данных по пользователю");
         }
     }
     public void SendTransaction(User? user, int idToSend, string comment, decimal value)

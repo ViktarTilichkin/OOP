@@ -12,8 +12,7 @@ namespace AppTransaction
         static void Main(string[] args)
         {
             ApplicationTransaction obj1 = new ApplicationTransaction();
-            obj1.ActivationBD();
-            Account authorization = new Account();
+            Account users = new Account();
             WorkflowTransaction transaction = new WorkflowTransaction();
             bool autorizationIn = false;
             User? user = null;
@@ -22,7 +21,7 @@ namespace AppTransaction
                 Console.WriteLine("Список доступных меню:");
                 Console.WriteLine("1 Регистраация");
                 Console.WriteLine("2 Авторизация");
-                Console.WriteLine("3 Выход из программы");
+                Console.WriteLine("0 Выход из программы");
                 Console.WriteLine("Введите номер меню");
                 string? menu = Console.ReadLine();
                 if (menu.Equals("1"))
@@ -32,20 +31,18 @@ namespace AppTransaction
                         Console.WriteLine("Меню регистраци");
                         Console.WriteLine("1 регистрация");
                         Console.WriteLine("0 Выход");
-                        Console.WriteLine("Вы находитесь в меню регистрации, оно пока не доступно.");
                         string? menu1 = Console.ReadLine();
                         if (menu1.Equals("1"))
                         {
-                            authorization.RegistrAcc(out User? user11);
+                            users.RegistrAcc(out User? user11);
                         }
-                        if (menu1.Equals("0"))
+                        else if (menu1.Equals("0"))
                         {
                             break;
                         }
                     }
-                    // просим пользователя ввести данные для регистрации 
                 }
-                if (menu.Equals("2"))
+                else if (menu.Equals("2"))
                 {
                     while (true)
                     {
@@ -64,13 +61,14 @@ namespace AppTransaction
                         if (menu2.Equals("1"))
                         {
                             Console.WriteLine("Меню авторизации");
-                            obj1.SignIn();
-                            autorizationIn = obj1.SignIn().Item1;
-                            user = obj1.SignIn().Item2;
+                            (autorizationIn, user) = obj1.SignIn(users);
+                            // (bool, User?) result = obj1.SignIn(users);
+                            // autorizationIn = result.Item1;
+                            // user = result.Item2;
                         }
                         else if (menu2.Equals("2") && autorizationIn)
                         {
-                            obj1.SendTransaction(user);
+                            obj1.SendTransaction(user, transaction);
                         }
                         else if (menu2.Equals("3") && autorizationIn)
                         {
@@ -88,7 +86,7 @@ namespace AppTransaction
                         }
                     }
                 }
-                if (menu.Equals("3"))
+                else if (menu.Equals("0"))
                 {
                     break;
                 }

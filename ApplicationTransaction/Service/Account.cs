@@ -2,9 +2,9 @@ using AppTransaction.SharedModels;
 
 namespace AppTransaction.Service;
 
-public class Account
+public class Account : IAuthorization
 {
-    private User[] Users;
+    public User[] Users { get; set; }
     private int NextIdUsers = 1;
 
     public Account()
@@ -18,11 +18,13 @@ public class Account
     }
     public bool Login(out User? user)
     {
+        Console.WriteLine("сработало");
         Console.Write("Enter email ");
         string? email = Console.ReadLine();
         Console.Write("Enter pass ");
         string? pass = Console.ReadLine();
         user = Search(email, pass);
+        Console.WriteLine("сработало");
         return user != null;
     }
     private User? Search(string? email, string? pass)
@@ -59,6 +61,7 @@ public class Account
         if (user != null)
         {
             Users[user.Id - 1] = user;
+            Console.WriteLine("отдало");
         }
         return user != null;
 
@@ -78,7 +81,9 @@ public class Account
         //         return null;
         //     }
         // }
-        return new User(NextIdUsers++, name, pass, email);
+        User newUser = new User(NextIdUsers++, name, pass, email);
+        Console.WriteLine(newUser);
+        return newUser;
 
     }
 }
