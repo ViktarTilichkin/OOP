@@ -7,7 +7,7 @@ namespace TaskIntro.MyClasses
 
         private int Index;
         private ulong[] TempFib = new ulong[2] { 0, 1 };
-        private ulong[] ResultFib; 
+        private ulong[] ResultFib;
         public Fibonacci()
         {
             Index = 1;
@@ -15,11 +15,11 @@ namespace TaskIntro.MyClasses
         }
         public Fibonacci(int length)
         {
-            if ( length > 1)
+            if (length > 1)
             {
-            Index = length;
-            ResultFib = new ulong[length];
-            Array.Copy(TempFib, ResultFib, TempFib.Length);
+                Index = length;
+                ResultFib = new ulong[length];
+                Array.Copy(TempFib, ResultFib, TempFib.Length);
             }
             else
             {
@@ -30,9 +30,9 @@ namespace TaskIntro.MyClasses
 
         public void PrintFib()
         {
-            for (int i = 2; i < Index ; i++ )
+            for (int i = 2; i < Index; i++)
             {
-                ResultFib[i] = ResultFib[i-1] + ResultFib[i-2];
+                ResultFib[i] = ResultFib[i - 1] + ResultFib[i - 2];
             }
             Console.WriteLine(string.Join(", ", ResultFib));
             Console.WriteLine("hello Fibonacci");
