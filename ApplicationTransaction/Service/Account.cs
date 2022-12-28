@@ -24,7 +24,6 @@ public class Account : IAuthorization
         Console.Write("Enter pass ");
         string? pass = Console.ReadLine();
         user = Search(email, pass);
-        Console.WriteLine("сработало");
         return user != null;
     }
     private User? Search(string? email, string? pass)
@@ -51,17 +50,16 @@ public class Account : IAuthorization
     }
     public bool RegistrAcc(out User? user)
     {
-        Console.WriteLine("Enter email");
-        string? email = Console.ReadLine();
         Console.WriteLine("Enter name");
         string? name = Console.ReadLine();
+        Console.WriteLine("Enter email");
+        string? email = Console.ReadLine();
         Console.WriteLine("Enter password");
         string? pass = Console.ReadLine();
         user = SearchSimple(name, email, pass);
         if (user != null)
         {
             Users[user.Id - 1] = user;
-            Console.WriteLine("отдало");
         }
         return user != null;
 
@@ -73,17 +71,6 @@ public class Account : IAuthorization
             System.Console.WriteLine("error input");
             return null;
         }
-        // for (int i = 0; i < Users.Length; i++)
-        // {
-        //     if (Users[i].Email == email)
-        //     {
-        //         System.Console.WriteLine("This email not available");
-        //         return null;
-        //     }
-        // }
-        User newUser = new User(NextIdUsers++, name, pass, email);
-        Console.WriteLine(newUser);
-        return newUser;
-
+        return new User(NextIdUsers++, name, email, pass);
     }
 }

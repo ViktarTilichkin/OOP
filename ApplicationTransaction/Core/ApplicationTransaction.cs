@@ -13,7 +13,7 @@ public class ApplicationTransaction
         }
         return (false, null);
     }
-    public void SendTransaction(User? user, WorkflowTransaction transaction)
+    public void SendTransaction(User user, WorkflowTransaction transaction)
     {
         Console.Write("Введите Id получателя: ");
         int idToSend = Convert.ToInt32(Console.ReadLine());
@@ -21,6 +21,9 @@ public class ApplicationTransaction
         string? commet = Console.ReadLine();
         Console.Write("Введите сумму: ");
         decimal value = Convert.ToDecimal(Console.ReadLine());
-        transaction.SendTransaction(user, idToSend, commet, value);
+        if (string.IsNullOrEmpty(commet))
+        {
+            transaction.SendTransaction(user, idToSend, commet, value);
+        }
     }
 }

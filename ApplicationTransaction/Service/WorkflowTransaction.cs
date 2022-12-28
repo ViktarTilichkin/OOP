@@ -35,7 +35,7 @@ public class WorkflowTransaction
             Console.WriteLine("нет данных по пользователю");
         }
     }
-    public void SendTransaction(User? user, int idToSend, string comment, decimal value)
+    public void SendTransaction(User user, int idToSend, string comment, decimal value)
     {
         Transaction[] arrayTemp = new Transaction[ArrayTransaction.Length + 1];
         Array.Copy(ArrayTransaction, arrayTemp, ArrayTransaction.Length);

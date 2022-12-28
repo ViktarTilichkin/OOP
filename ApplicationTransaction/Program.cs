@@ -62,9 +62,6 @@ namespace AppTransaction
                         {
                             Console.WriteLine("Меню авторизации");
                             (autorizationIn, user) = obj1.SignIn(users);
-                            // (bool, User?) result = obj1.SignIn(users);
-                            // autorizationIn = result.Item1;
-                            // user = result.Item2;
                         }
                         else if (menu2.Equals("2") && autorizationIn)
                         {
@@ -90,27 +87,8 @@ namespace AppTransaction
                 {
                     break;
                 }
-
-                // obj1.SignIn();
-                // Console.Write("хотите продолжить ? yes/no ");
-                // string? exite = Console.ReadLine();
-                // if (exite.Equals("no"))
-                // {
-                //     break;
-                // }
             }
 
         }
     }
 }
-
-// while (true)
-// {
-//     Меню уровень 
-//     1.методы регистрация
-//     2.метод авторизация
-//      2.1 метод пуша транзакции
-//      2.2 просмотра транзакций
-//      2.3 выход из акаунта 
-//     3. выход из программы.
-// }

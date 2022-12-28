@@ -5,7 +5,7 @@ using AppTransaction.Service;
 public class Transaction
 {
     public int IdTransaction { get; }
-    public string Comment { get; set; }
+    public string Comment { get; set; } = "hello";
     public decimal Value { get; set; }
     public DateTime Date { get; set; }
     public int UserId { get; set; }
