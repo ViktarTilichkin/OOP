@@ -35,7 +35,7 @@ public class ServerPost
 
     public User Controller()
     {
-        
+
     }
     private bool Middleware()
     {
