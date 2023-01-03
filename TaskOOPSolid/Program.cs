@@ -1,7 +1,8 @@
 ﻿
 using ValidatorEmail;
 using Myclasses.ServerGetAll;
-using Myclasses.User;
+using Myclasses.ServerById;
+
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -9,7 +10,14 @@ namespace MyApp // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
-         user
+            ServerGetAll obj = new ServerGetAll();
+            Console.WriteLine(string.Join(" \n ", obj.Controller().ToList()));
+            // foreach (var item in obj.Controller())
+            // {
+            //     Console.WriteLine(item);
+            // }
+            ServerById obj1 = new ServerById();
+            Console.WriteLine(obj1.Controller(2));
         }
     }
 }

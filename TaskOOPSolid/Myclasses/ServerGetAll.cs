@@ -9,7 +9,7 @@
 // приложении
 // Задание:
 // Необходимо вывести в консоль весь массив
-using Myclasses.User;
+using Myclasses.UserClass;
 
 namespace Myclasses.ServerGetAll;
 
@@ -19,15 +19,14 @@ public class ServerGetAll
 
     public ServerGetAll()
     {
-        Users = new User[4];
+        Users = new User[5];
         Users[0] = new User(1, "Yesenia", 22);
         Users[1] = new User(2, "Hanna", 22);
         Users[2] = new User(3, "Stanislau", 25);
         Users[3] = new User(4, "German", 18);
         Users[4] = new User(5, "Maria", 27);
-
     }
-    public User[]? Controller()
+    public User[] Controller()
     {
         return Service();
     }

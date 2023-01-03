@@ -1,4 +1,4 @@
-namespace Myclasses.User;
+namespace Myclasses.UserClass;
 
 public class User
 {
@@ -10,5 +10,9 @@ public class User
         Id = id;
         Name = name;
         Age = age;
+    }
+    public override string ToString()
+    {
+        return $"Id {Id} Name {Name} Age {Age}";
     }
 }
