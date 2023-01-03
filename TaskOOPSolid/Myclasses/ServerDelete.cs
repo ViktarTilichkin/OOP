@@ -30,20 +30,20 @@ public class ServerDelete
         Users[4] = new User(5, "Maria", 27);
     }
 
-    public User Controller()
-    {
+    // public User Controller()
+    // {
         
-    }
-    private bool Middleware()
-    {
+    // }
+    // private bool Middleware()
+    // {
 
-    }
-    private User Service()
-    {
+    // }
+    // private User Service()
+    // {
 
-    }
-    private User Repository()
-    {
+    // }
+    // private User Repository()
+    // {
 
-    }
+    // }
 }

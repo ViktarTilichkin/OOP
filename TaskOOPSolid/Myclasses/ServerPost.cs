@@ -22,31 +22,60 @@ namespace Myclasses.ServerPost;
 public class ServerPost
 {
     private User[] Users;
+    private int Id = 1;
 
     public ServerPost()
     {
-        Users = new User[5];
-        Users[0] = new User(1, "Yesenia", 22);
-        Users[1] = new User(2, "Hanna", 22);
-        Users[2] = new User(3, "Stanislau", 25);
-        Users[3] = new User(4, "German", 18);
-        Users[4] = new User(5, "Maria", 27);
+        Users = new User[20];
+        Users[0] = new User(Id, "Yesenia", 22);
+        Users[1] = new User(Id++, "Hanna", 22);
+        Users[2] = new User(Id++, "Stanislau", 25);
+        Users[3] = new User(Id++, "German", 18);
+        Users[4] = new User(Id++, "Maria", 27);
     }
 
-    public User Controller()
+    public void Controller(string name, int age)
     {
+        if (Middleware(name, age))
+        {
+            Console.WriteLine("User add successful");
+        }
+        else
+        {
+            Console.WriteLine("User not add");
+        }
+    }
+    private bool Middleware(string name, int age)
+    {
+        if (string.IsNullOrEmpty(name) && age > 0)
+        {
+            return true;
+        }
+        return false;
+    }
+    private User? Service(string name, int age)
+    {
+        User? temp = Repository(name, age);
+        if (temp == null)
+        {
+            Console.WriteLine("error");
+            return temp;
+        }
+        return temp;
+
 
     }
-    private bool Middleware()
+    private User? Repository(string name, int age)
     {
+        for (int i = 0; i < Users.Length; i++)
+        {
+            if (Users[i].Name.ToLower() == name.ToLower())
+            {
+                return null;
+            }
 
-    }
-    private User Service()
-    {
+        }
 
-    }
-    private User Repository()
-    {
-
+        return Users[Id - 1] = new User(Id, name, age);
     }
 }
