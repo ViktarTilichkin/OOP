@@ -4,6 +4,7 @@ using Myclasses.ServerGetAll;
 using Myclasses.ServerById;
 using Myclasses.ServerPost;
 using Myclasses.ServerPut;
+using Myclasses.ServerDelete;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -23,6 +24,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
             obj2.Controller("halle", 32);
             ServerPut obj3 = new ServerPut();
             obj3.Controller(2, "antoni",22);
+            ServerDelete obj4 = new ServerDelete();
+            obj4.Controller(3);
+
         }
     }
 }

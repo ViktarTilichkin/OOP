@@ -30,20 +30,43 @@ public class ServerDelete
         Users[4] = new User(5, "Maria", 27);
     }
 
-    // public User Controller()
-    // {
-        
-    // }
-    // private bool Middleware()
-    // {
+    public void Controller(int id)
+    {
+        if (Middleware(id))
+        {
+            Console.WriteLine(Service(id));
+        }
 
-    // }
-    // private User Service()
-    // {
-
-    // }
-    // private User Repository()
-    // {
-
-    // }
+    }
+    private bool Middleware(int id)
+    {
+        if (id > 0)
+        {
+            return true;
+        }
+        return false;
+    }
+    private User? Service(int id)
+    {
+        User? temp = Repository(id);
+        if (temp == null)
+        {
+            Console.WriteLine("error");
+        }
+        Console.WriteLine("change succesful");
+        return temp;
+    }
+    private User? Repository(int id)
+    {
+        for (int i = 0; i < Users.Length; i++)
+        {
+            if (Users[i].Id == id)
+            {
+                Users[i].Name = default;
+                Users[i].Age = default;
+                return Users[i];
+            }
+        }
+        return null;
+    }
 }

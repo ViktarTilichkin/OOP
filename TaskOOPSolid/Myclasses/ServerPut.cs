@@ -34,7 +34,7 @@ public class ServerPut
     {   
         if(Middleware(id, name,age))
         {
-            Service(id, name,age);
+            Console.WriteLine(Service(id, name,age));
         }
         
     }
