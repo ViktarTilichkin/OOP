@@ -20,7 +20,7 @@ namespace TaskOOP2
             //     Number = "+375-29-777-77-77"
             // };
 
-
+ 
             Phone phone1 = new Phone();
             Console.WriteLine(phone1);
             phone1.ReceiveCall("LoL");
