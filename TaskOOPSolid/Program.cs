@@ -3,6 +3,7 @@ using ValidatorEmail;
 using Myclasses.ServerGetAll;
 using Myclasses.ServerById;
 using Myclasses.ServerPost;
+using Myclasses.ServerPut;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -20,6 +21,8 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Console.WriteLine(obj1.Controller(2));
             ServerPost obj2 = new ServerPost();
             obj2.Controller("halle", 32);
+            ServerPut obj3 = new ServerPut();
+            obj3.Controller(2, "antoni",22);
         }
     }
 }

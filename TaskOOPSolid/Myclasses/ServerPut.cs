@@ -30,20 +30,43 @@ public class ServerPut
         Users[4] = new User(5, "Maria", 27);
     }
 
-    // public User Controller()
-    // {
+    public void Controller(int id, string name, int age)
+    {   
+        if(Middleware(id, name,age))
+        {
+            Service(id, name,age);
+        }
         
-    // }
-    // private bool Middleware()
-    // {
-
-    // }
-    // private User Service()
-    // {
-
-    // }
-    // private User Repository()
-    // {
-
-    // }
+    }
+    private bool Middleware(int id, string name, int age)
+    {
+        if (id > 0 && !string.IsNullOrEmpty(name) && age > 0 && age < 140)
+        {
+            return true;
+        }
+        return false;
+    }
+    private User? Service(int id, string name, int age)
+    {
+        User? temp = Repository(id, name, age);
+        if (temp == null)
+        {
+            Console.WriteLine("error");
+        }
+        Console.WriteLine("change succesful");
+        return temp;
+    }
+    private User? Repository(int id, string name, int age)
+    {
+        for (int i = 0; i < Users.Length; i++)
+        {
+            if (Users[i].Id == id)
+            {
+                Users[i].Name = name;
+                Users[i].Age = age;
+                return Users[i];
+            }
+        }
+        return null;
+    }
 }
