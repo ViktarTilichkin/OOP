@@ -47,7 +47,7 @@ public class ServerPost
     }
     private bool Middleware(string name, int age)
     {
-        if (string.IsNullOrEmpty(name) && age > 0)
+        if (!string.IsNullOrEmpty(name) && age > 0)
         {
             return true;
         }
