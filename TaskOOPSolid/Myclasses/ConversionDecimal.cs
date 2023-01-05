@@ -7,10 +7,23 @@ namespace Myclasses.ConversionDecimal;
 
 public class ConversionDecimal
 {
-    public int ToBinaryNumber(int num)
+    public string ToBinaryNumber(int num)
     {
-        int numBinary = num;
-        return numBinary;
+        string temp = "";
+        while (num != 0)
+        {
+            if (num % 2 == 0)
+            {
+                temp += "0";
+            }
+            else
+            {
+                temp += "1";
+            }
+            num = num / 2;
+        }
+        string result = (string)temp.ToCharArray().Reverse();
+        return result;
     }
     public string ToHexadecimalNumber(int num)
     {

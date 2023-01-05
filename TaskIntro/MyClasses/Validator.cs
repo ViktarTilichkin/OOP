@@ -10,11 +10,20 @@ namespace TaskIntro.MyClasses
         // Дополнить 5 задание. Добавить метод IsPhone для проверки на номер телефона
 
         // private string Text = "hello Validator";
-        public Validator()
+
+        public bool IsEmail()
         {
 
         }
-        // public Validator()
+        public bool IsUrl()
+        {
+
+        }
+        public bool IsDate()
+        {
+
+        }
+        public bool IsPhone()
         {
 
         }
