@@ -11,9 +11,19 @@ namespace TaskIntro.MyClasses
 
         // private string Text = "hello Validator";
 
-        public bool IsEmail()
+        public bool IsEmail(string text)
         {
-
+            text.Trim();
+            string[] result = text.Split("@");
+            if (result.Length == 2)
+            {
+                string[] result1 = result[1].Split(".");
+                if (result1.Length == 2 && result1[1] != string.Empty)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         public bool IsUrl()
         {
@@ -26,10 +36,6 @@ namespace TaskIntro.MyClasses
         public bool IsPhone()
         {
 
-        }
-        public static void Print()
-        {
-            Console.WriteLine("Text");
         }
     }
 }
