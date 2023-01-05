@@ -5,6 +5,7 @@ using Myclasses.ServerById;
 using Myclasses.ServerPost;
 using Myclasses.ServerPut;
 using Myclasses.ServerDelete;
+using Myclasses.Sort;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -26,7 +27,11 @@ namespace MyApp // Note: actual namespace depends on the project name.
             obj3.Controller(2, "antoni",22);
             ServerDelete obj4 = new ServerDelete();
             obj4.Controller(3);
-
+            int[] num = {5,4,7,3,8,2};
+            Console.WriteLine(string.Join(", " , num));
+            Sort obj5 = new Sort();
+            obj5.SortData(out int[] result, num);
+            Console.WriteLine(string.Join(", ", result));
         }
     }
 }

@@ -5,7 +5,7 @@ namespace Myclasses.Sort;
 
 public class Sort
 {
-    public void Sort(out int[] numbers, params int[] num)
+    public void SortData(out int[] numbers, params int[] num)
     {
         for (int i = 0; i < num.Length - 1; i++)
         {
@@ -19,6 +19,7 @@ public class Sort
                 }
             }
         }
+        numbers = num;
     }
 
 }
