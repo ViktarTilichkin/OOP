@@ -54,6 +54,8 @@ namespace TaskOOP2
             Matrix matrix1 = new Matrix(4,5);
             matrix1.InitMatrix();
             matrix.SummMatrix(matrix1);
+            matrix.MiltMatrix(matrix1);
+            matrix.MatrixMultNum(10);
 
             Reader[] readers = new Reader[5];
             for (int i = 0; i < readers.Length; i++)
