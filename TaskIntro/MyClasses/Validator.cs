@@ -25,10 +25,19 @@ namespace TaskIntro.MyClasses
             }
             return false;
         }
-        // public bool IsUrl()
-        // {
-
-        // }
+        public bool IsUrl(string url)
+        {
+            url.Trim();
+            string[] result = url.Split(".");
+            if (result.Length == 3)
+            {
+                if (result[0].Equals("www"))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public bool IsDate(string date)
         {
             date.Trim();
@@ -72,9 +81,9 @@ namespace TaskIntro.MyClasses
             int.TryParse(temp, out int num1);
             int.TryParse(temp2, out int num2);
             int.TryParse(temp3, out int num3);
-            if(num2 >0 && num2 < 13)
+            if (num2 > 0 && num2 < 13)
             {
-                if((num3 > 0 && num3 <31) || (num1 > 0 && num1 <31))
+                if ((num3 > 0 && num3 < 31) || (num1 > 0 && num1 < 31))
                 {
                     return true;
                 }
@@ -82,9 +91,13 @@ namespace TaskIntro.MyClasses
             }
             return false;
         }
-        // public bool IsPhone()
-        // {
-
-        // }
+        public bool IsPhone(string number)
+        {
+            if (number.StartsWith("+375") && number.Length == 13)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
