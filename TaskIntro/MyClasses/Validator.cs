@@ -25,17 +25,66 @@ namespace TaskIntro.MyClasses
             }
             return false;
         }
-        public bool IsUrl()
-        {
+        // public bool IsUrl()
+        // {
 
-        }
-        public bool IsDate()
+        // }
+        public bool IsDate(string date)
         {
-
+            date.Trim();
+            int coutnIndex = 0;
+            string temp = "";
+            string temp2 = "";
+            string temp3 = "";
+            for (int i = 0; i < date.Length; i++)
+            {
+                if (int.TryParse(date[i].ToString(), out _))
+                {
+                    temp += date[i];
+                    coutnIndex++;
+                    continue;
+                }
+                coutnIndex++;
+                break;
+            }
+            for (int i = coutnIndex; i < date.Length; i++)
+            {
+                if (int.TryParse(date[i].ToString(), out _))
+                {
+                    temp2 += date[i];
+                    coutnIndex++;
+                    continue;
+                }
+                coutnIndex++;
+                break;
+            }
+            for (int i = coutnIndex; i < date.Length; i++)
+            {
+                if (int.TryParse(date[i].ToString(), out _))
+                {
+                    temp3 += date[i];
+                    coutnIndex++;
+                    continue;
+                }
+                coutnIndex++;
+                break;
+            }
+            int.TryParse(temp, out int num1);
+            int.TryParse(temp2, out int num2);
+            int.TryParse(temp3, out int num3);
+            if(num2 >0 && num2 < 13)
+            {
+                if((num3 > 0 && num3 <31) || (num1 > 0 && num1 <31))
+                {
+                    return true;
+                }
+                return false;
+            }
+            return false;
         }
-        public bool IsPhone()
-        {
+        // public bool IsPhone()
+        // {
 
-        }
+        // }
     }
 }
