@@ -4,8 +4,8 @@
 // количество строк и столбцов в матрице. + 
 // Класс должен иметь следующие методы:
 // сложение с другой матрицей;+
-// умножение на число;
-// вывод на печать;
+// умножение на число; + 
+// вывод на печать; + 
 // умножение матриц.
 // Значения заполняются рандомными числами. Сложение и умножение
 // матриц возвращает новую матрицу.
@@ -37,7 +37,7 @@ public class Matrix
 
         }
     }
-    public void SummMatrix(Matrix matrix)
+    public Matrix? SummMatrix(Matrix matrix)
     {
         matrix.Print();
         Console.WriteLine();
@@ -52,7 +52,41 @@ public class Matrix
                 }
             }
             matresult.Print();
+            return matresult;
         }
+        return null;
+    }
+    public Matrix MatrixMultNum(int num)
+    {
+        Matrix matresult = new Matrix(CountRow, CountColumn);
+        for (int i = 0; i < CountRow; i++)
+        {
+            for (int j = 0; j < CountColumn; j++)
+            {
+                matresult.ItemMat[i, j] = ItemMat[i, j] * num;
+            }
+        }
+        matresult.Print();
+        return matresult;
+    }
+    public Matrix? MiltMatrix(Matrix matrix)
+    {
+        matrix.Print();
+        Console.WriteLine();
+        if (CountColumn == matrix.CountColumn && CountRow == matrix.CountRow)
+        {
+            Matrix matresult = new Matrix(CountRow, CountColumn);
+            for (int i = 0; i < CountRow; i++)
+            {
+                for (int j = 0; j < CountColumn; j++)
+                {
+                    matresult.ItemMat[i, j] = ItemMat[i, j] *  matrix.ItemMat[i, j];
+                }
+            }
+            matresult.Print();
+            return matresult;
+        }
+        return null;
     }
     public void Print()
     {
