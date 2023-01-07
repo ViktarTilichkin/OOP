@@ -28,11 +28,23 @@ public class ConversionDecimal
     public string ToHexadecimalNumber(int num)
     {
         string result = "";
-        return result;
+        object[] arrayConv = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F" };
+        while (num >= 1)
+        {
+            result += arrayConv[num % 16];
+            num = num / 16;
+        }
+        return new string(result.Reverse().ToArray());
     }
-    public int ToOctalNumber(int num)
+    public string ToOctalNumber(int num)
     {
-        int result = num;
-        return result;
+        string result = "";
+        object[] arrayConv = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F" };
+        while (num >= 1)
+        {
+            result += arrayConv[num % 8];
+            num = num / 8;
+        }
+        return new string(result.Reverse().ToArray());
     }
 }
