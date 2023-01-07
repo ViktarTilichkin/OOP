@@ -7,8 +7,9 @@ namespace Myclasses.ConversionBinary;
 
 public class ConversionBinary
 {
-    public bool ToDecimalNumber(string numbers, out int numberResult)
+    public bool ToDecimalNumber(object number, out int numberResult)
     {
+        string? numbers = number.ToString();
         numbers.Trim();
         bool result = true;
         string text = "";
