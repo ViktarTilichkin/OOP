@@ -34,7 +34,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
             // obj5.SortData(out int[] result, num);
             // Console.WriteLine(string.Join(", ", result));
             ConversionDecimal obj6 = new ConversionDecimal();
-            Console.WriteLine(obj6.ToBinaryNumber(8));
+            Console.WriteLine(obj6.ToBinaryNumber(395));
+            Console.WriteLine(obj6.ToHexadecimalNumber(395));
+            Console.WriteLine(obj6.ToOctalNumber(395));
         }
     }
 }

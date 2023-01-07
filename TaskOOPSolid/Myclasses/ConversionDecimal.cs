@@ -22,8 +22,7 @@ public class ConversionDecimal
             }
             num = num / 2;
         }
-        string result = (string)temp.ToCharArray().Reverse();
-        return result;
+        return new string(temp.Reverse().ToArray());
     }
     public string ToHexadecimalNumber(int num)
     {
