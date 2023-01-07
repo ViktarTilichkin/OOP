@@ -7,10 +7,38 @@ namespace Myclasses.ConversionBinary;
 
 public class ConversionBinary
 {
-    public int ToDecimalNumber(int num)
+    public bool ToDecimalNumber(string numbers, out int numberResult)
     {
-        int numBinary = num;
-        return numBinary;
+        numbers.Trim();
+        bool result = true;
+        string text = "";
+        numberResult = 0;
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            if (numbers[i].Equals('0'))
+            {
+                text += numbers[i];
+            }
+            else if (numbers[i].Equals('1'))
+            {
+                text += numbers[i];
+            }
+            else
+            {
+                result = false;
+                break;
+            }
+        }
+        if (result)
+        {
+            for (int j = text.Length - 1; j > -1; j--)
+            {
+                int num = Convert.ToInt32(text[j].ToString());
+                int num2 = (int)Math.Pow(2, j + 1);
+                numberResult += num * num2;
+            }
+        }
+        return result;
     }
     public string ToHexadecimalNumber(int num)
     {
