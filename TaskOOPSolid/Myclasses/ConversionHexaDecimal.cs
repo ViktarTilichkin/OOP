@@ -35,7 +35,7 @@ public class ConversionHexaDecimal
         while (num >= 1)
         {
             result += arrayConv[num % 16];
-            num = num / 16;
+            num = num / 16;   
         }
         return new string(result.Reverse().ToArray());
     }
