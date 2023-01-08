@@ -7,9 +7,8 @@ namespace Myclasses.ConversionBinary;
 
 public class ConversionBinary
 {
-    public bool ToDecimalNumber(object number, out int numberResult)
+    public bool ToDecimalNumber(string numbers, out int numberResult)
     {
-        string? numbers = number.ToString();
         numbers.Trim();
         bool result = true;
         string text = "";
@@ -32,23 +31,38 @@ public class ConversionBinary
         }
         if (result)
         {
-            for (int j = text.Length - 1; j > -1; j--)
+            text = new string(text.Reverse().ToArray());
+            for (int j = 0; j < text.Length; j++)
             {
                 int num = Convert.ToInt32(text[j].ToString());
-                int num2 = (int)Math.Pow(2, j + 1);
+                int num2 = (int)Math.Pow(2, j);
                 numberResult += num * num2;
             }
         }
         return result;
     }
-    public string ToHexadecimalNumber(int num)
+    public string ToHexadecimalNumber(string num)
     {
+        ToDecimalNumber(num, out int number);
         string result = "";
-        return result;
+        object[] arrayConv = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F" };
+        while (number >= 1)
+        {
+            result += arrayConv[number % 16];
+            number = number / 16;
+        }
+        return new string(result.Reverse().ToArray());
     }
-    public int ToOctalNumber(int num)
+    public string ToOctalNumber(string num)
     {
-        int result = num;
-        return result;
+        ToDecimalNumber(num, out int number);
+        string result = "";
+        object[] arrayConv = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F" };
+        while (number >= 1)
+        {
+            result += arrayConv[number % 8];
+            number = number / 8;
+        }
+        return new string(result.Reverse().ToArray());
     }
 }

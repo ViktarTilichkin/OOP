@@ -7,6 +7,8 @@ using Myclasses.ServerPut;
 using Myclasses.ServerDelete;
 using Myclasses.Sort;
 using Myclasses.ConversionDecimal;
+using Myclasses.ConversionBinary;
+using Myclasses.ConversionHexaDecimal;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -33,10 +35,19 @@ namespace MyApp // Note: actual namespace depends on the project name.
             // Sort obj5 = new Sort();
             // obj5.SortData(out int[] result, num);
             // Console.WriteLine(string.Join(", ", result));
-            ConversionDecimal obj6 = new ConversionDecimal();
-            Console.WriteLine(obj6.ToBinaryNumber(395));
-            Console.WriteLine(obj6.ToHexadecimalNumber(395));
-            Console.WriteLine(obj6.ToOctalNumber(395));
+            // ConversionDecimal obj6 = new ConversionDecimal();
+            // Console.WriteLine(obj6.ToBinaryNumber(395));
+            // Console.WriteLine(obj6.ToHexadecimalNumber(395));
+            // Console.WriteLine(obj6.ToOctalNumber(395));
+            // ConversionBinary obj7 = new ConversionBinary();
+            // obj7.ToDecimalNumber("1010" , out int res);
+            // Console.WriteLine(res);
+            // Console.WriteLine(obj7.ToHexadecimalNumber("1010"));
+            // Console.WriteLine(obj7.ToOctalNumber("1010"));
+            ConversionHexaDecimal obj8 = new ConversionHexaDecimal();
+            Console.WriteLine(obj8.ToDecimalNumber("A"));
+            Console.WriteLine(obj8.ToBinaryNumber("A"));
+            Console.WriteLine(obj8.ToOctalNumber("A"));
         }
     }
 }
