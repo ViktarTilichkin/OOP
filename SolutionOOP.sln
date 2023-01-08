@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskOOP2", "TaskOOP2\TaskOO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationTransaction", "ApplicationTransaction\ApplicationTransaction.csproj", "{7649C43B-E4E3-47F3-BD7A-513D365B34BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskOOPInheritance", "TaskOOPInheritance\TaskOOPInheritance.csproj", "{DD27A1BB-D556-496C-9022-671F4C60B016}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{7649C43B-E4E3-47F3-BD7A-513D365B34BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7649C43B-E4E3-47F3-BD7A-513D365B34BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7649C43B-E4E3-47F3-BD7A-513D365B34BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD27A1BB-D556-496C-9022-671F4C60B016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD27A1BB-D556-496C-9022-671F4C60B016}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD27A1BB-D556-496C-9022-671F4C60B016}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD27A1BB-D556-496C-9022-671F4C60B016}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
