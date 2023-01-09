@@ -33,8 +33,8 @@ namespace MyApp // Note: actual namespace depends on the project name.
             //     item.Moving();
             //     item.Stopping();
             // }
-            // Figur figura = new Figur("null");
-            // figura.Square();
+            Figur figura = new Figur("null");
+            figura.Square();
             Figur rectangle = new Rectangle("pr9mougolnik", 5, 10);
             rectangle.Square();
             Triangle treugolnik = new Triangle("treugolnik", 5, 5, 5);
