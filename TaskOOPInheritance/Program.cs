@@ -62,8 +62,16 @@ namespace MyApp // Note: actual namespace depends on the project name.
             // Console.WriteLine(van9.GetChildren());
             // van9.SetChildren("Van9", "Ivanov", 9);
             // Console.WriteLine(van9.GetChildren());
-            Matrix mat1 = new Matrix(4,7);
-            mat1.SetData();
+            // Matrix mat1 = new Matrix(2, 5);
+            // mat1.SetData();
+            // mat1.ReverseData();
+            Counter cn = new Counter(99);
+            cn.Incriment();
+            Console.WriteLine(cn);
+            cn.Incriment();
+            Console.WriteLine(cn);
+            cn.Incriment();
+            Console.WriteLine(cn);
         }
     }
 }

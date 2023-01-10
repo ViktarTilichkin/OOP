@@ -29,5 +29,17 @@ public class Matrix
             Console.WriteLine();
         }
     }
-
+    public void ReverseData()
+    {
+        int[,] matTemp = new int[Column, Row];
+        for (int i = 0; i < Column; i++)
+        {
+            for (int j = 0; j < Row; j++)
+            {
+                matTemp[i, j] = ArrayMatrix[j, i];
+                Console.Write($"{matTemp[i, j]} ");
+            }
+            Console.WriteLine();
+        }
+    }
 }
