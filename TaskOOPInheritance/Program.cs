@@ -55,14 +55,15 @@ namespace MyApp // Note: actual namespace depends on the project name.
             //     Console.WriteLine(arrayFigur[index]);
             //     index ++;
             // }
-            Tiles plitka = new Tiles("Krasivoe", 0.5, 0.5, 25);
-            Console.WriteLine(plitka.GetData());
-            Console.WriteLine(plitka.GetCountTiles(44.2));
-            Children van9 = new Children();
-            Console.WriteLine(van9.GetChildren());
-            van9.SetChildren("Van9", "Ivanov", 9);
-            Console.WriteLine(van9.GetChildren());
+            // Tiles plitka = new Tiles("Krasivoe", 0.5, 0.5, 25);
+            // Console.WriteLine(plitka.GetData());
+            // Console.WriteLine(plitka.GetCountTiles(44.2));
+            // Children van9 = new Children();
+            // Console.WriteLine(van9.GetChildren());
+            // van9.SetChildren("Van9", "Ivanov", 9);
+            // Console.WriteLine(van9.GetChildren());
+            Matrix mat1 = new Matrix(4,7);
+            mat1.SetData();
         }
     }
-
 }
