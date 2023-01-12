@@ -2,6 +2,7 @@
 using MyClasses.Transport;
 using Figurs;
 using Incapsulation;
+using PaymentSystems;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -65,13 +66,35 @@ namespace MyApp // Note: actual namespace depends on the project name.
             // Matrix mat1 = new Matrix(2, 5);
             // mat1.SetData();
             // mat1.ReverseData();
-            Counter cn = new Counter(99);
-            cn.Incriment();
-            Console.WriteLine(cn);
-            cn.Incriment();
-            Console.WriteLine(cn);
-            cn.Incriment();
-            Console.WriteLine(cn);
+            // Counter cn = new Counter(99);
+            // cn.Incriment();
+            // Console.WriteLine(cn);
+            // cn.Incriment();
+            // Console.WriteLine(cn);
+            // cn.Incriment();
+            // Console.WriteLine(cn);
+            PaymentTerminal terminal = new PaymentTerminal("terminal");
+            Visa dima = new Visa("001", 1);
+            terminal.SetMoneyByPaymentSystem(10, dima);
+            dima.SetMoney(100);
+            terminal.SetMoneyByPaymentSystem(10, dima);
+            Console.WriteLine(dima);
+            Console.WriteLine();
+            Console.WriteLine(dima.GetHistory());
+            Console.WriteLine();
+            Console.WriteLine(terminal);
+            Console.WriteLine();
+            UnionPay artem = new UnionPay("002", 1);
+            artem.SetMoney(15000);
+            terminal.SetMoneyByPaymentSystem(15000, artem);
+            terminal.SetMoneyByPaymentSystem(10000, artem);
+            Console.WriteLine(artem);
+            Console.WriteLine();
+            Console.WriteLine(artem.GetHistory());
+            Console.WriteLine();
+            Console.WriteLine(terminal);
+            
+
         }
     }
 }
