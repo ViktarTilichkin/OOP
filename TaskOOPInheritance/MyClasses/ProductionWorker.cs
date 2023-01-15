@@ -10,4 +10,4 @@ public class ProductionWorker : MyClasses.Employee.Employee
         WorkingShift = workShift;
         HourlyWage = hourWage;
     }
-}
+}  
