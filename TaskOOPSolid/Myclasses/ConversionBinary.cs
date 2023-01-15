@@ -57,10 +57,9 @@ public class ConversionBinary
     {
         ToDecimalNumber(num, out int number);
         string result = "";
-        object[] arrayConv = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F" };
         while (number >= 1)
         {
-            result += arrayConv[number % 8];
+            result += number % 8;
             number = number / 8;
         }
         return new string(result.Reverse().ToArray());

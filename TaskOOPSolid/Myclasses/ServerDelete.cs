@@ -62,8 +62,7 @@ public class ServerDelete
         {
             if (Users[i].Id == id)
             {
-                Users[i].Name = default;
-                Users[i].Age = default;
+                Users[i] = null;
                 return Users[i];
             }
         }

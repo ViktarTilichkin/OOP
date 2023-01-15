@@ -34,10 +34,9 @@ public class ConversionHexaDecimal
     {
         int num = Convert.ToInt32(ToDecimalNumber(number));
         string result = "";
-        object[] arrayConv = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F" };
         while (num >= 1)
         {
-            result += arrayConv[num % 2];
+            result += num % 2;
             num = num / 2;
         }
         return new string(result.Reverse().ToArray());
@@ -46,10 +45,9 @@ public class ConversionHexaDecimal
     {
         int num = Convert.ToInt32(ToDecimalNumber(number));
         string result = "";
-        object[] arrayConv = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F" };
         while (num >= 1)
         {
-            result += arrayConv[num % 8];
+            result += num % 8;
             num = num / 8;
         }
         return new string(result.Reverse().ToArray());

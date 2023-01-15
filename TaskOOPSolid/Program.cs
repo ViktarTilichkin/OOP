@@ -13,7 +13,7 @@ using Myclasses.ConversionHexaDecimal;
 namespace MyApp // Note: actual namespace depends on the project name.
 {
     internal class Program
-    {   
+    {
         static void Main(string[] args)
         {
             ServerGetAll obj = new ServerGetAll();
@@ -27,20 +27,19 @@ namespace MyApp // Note: actual namespace depends on the project name.
             ServerPost obj2 = new ServerPost();
             obj2.Controller("halle", 32);
             ServerPut obj3 = new ServerPut();
-            obj3.Controller(2, "antoni",22);
+            obj3.Controller(2, "antoni", 22);
             ServerDelete obj4 = new ServerDelete();
             obj4.Controller(3);
-            int[] num = {5,4,7,3,8,2};
-            Console.WriteLine(string.Join(", " , num));
+            int[] num = { 5, 4, 7, 3, 8, 2 };
+            Console.WriteLine(string.Join(", ", num));
             Sort obj5 = new Sort();
-            obj5.SortData(out int[] result, num);
-            Console.WriteLine(string.Join(", ", result));
+            Console.WriteLine(string.Join(", ", obj5.SortData(num)));
             ConversionDecimal obj6 = new ConversionDecimal();
             Console.WriteLine(obj6.ToBinaryNumber(395));
             Console.WriteLine(obj6.ToHexadecimalNumber(395));
             Console.WriteLine(obj6.ToOctalNumber(395));
             ConversionBinary obj7 = new ConversionBinary();
-            obj7.ToDecimalNumber("1010" , out int res);
+            obj7.ToDecimalNumber("1010", out int res);
             Console.WriteLine(res);
             Console.WriteLine(obj7.ToHexadecimalNumber("1010"));
             Console.WriteLine(obj7.ToOctalNumber("1010"));
