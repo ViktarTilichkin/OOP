@@ -9,7 +9,6 @@ namespace TaskIntro.MyClasses
         private string Surname;
         public Singer() : this("name", "sername")
         {
-            Surname = "1";
         }
         public Singer(string name, string surname)
         {

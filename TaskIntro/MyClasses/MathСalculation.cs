@@ -19,7 +19,7 @@ namespace TaskIntro.MyClasses
             int countPosNum = 0;
             for (int i=0; i < Numbers.Length; i++)
             {
-                if(Numbers[i] > -1)
+                if(Numbers[i] > 0)
                 {
                     countPosNum++;
                 }
