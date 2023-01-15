@@ -57,7 +57,7 @@ public class UnionPay : AccountPayment
             com = money * (decimal)0.001;
 
         }
-        else if (money < 1000)
+        else if (money < 1000)  
         {
             com = money * (decimal)0.002;
 
