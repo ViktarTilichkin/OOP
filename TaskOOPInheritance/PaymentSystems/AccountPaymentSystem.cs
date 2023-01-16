@@ -12,7 +12,7 @@ public abstract class AccountPayment
     }
     public AccountPayment(string number, decimal money) : this(number)
     {
-        Money = money;  
+        Money = money;    
     }
     public abstract bool Payment(string information, decimal reques);
 
