@@ -10,7 +10,7 @@ public class Rectangle : Figur
         WidthA = widthA;
         WidthB = widthB;
     }
-
+ 
     public override void Square()
     {
         double square = WidthA * WidthB;
