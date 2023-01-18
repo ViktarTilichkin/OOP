@@ -23,6 +23,8 @@ namespace TaskIntro
             WordString text = new WordString("23myName");
             Console.WriteLine(text.UpperFirst("23myName"));
             Console.WriteLine(text.ReverseString("23myName"));
+            Console.WriteLine(text.ReverseString("23myName"));
+            Console.WriteLine(text.UpperEvery("23myName is string string23or23 join"));
         }
     }
 }

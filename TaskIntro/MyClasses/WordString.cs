@@ -42,9 +42,30 @@ namespace TaskIntro.MyClasses
             }
             return result;
         }
-        // public string UpperEvery()
-        // {
-        //     return;
-        // }
+        public string UpperEvery(string text)
+        {
+            string result = "";
+            bool firstLetter = true;
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (char.IsLetter(text[i]) && firstLetter)
+                {
+                    result += char.ToUpper(text[i]);
+                    firstLetter = false;
+                }
+                else if (!char.IsLetter(text[i]))
+                {
+
+                    result += text[i];
+                    firstLetter = true;
+
+                }
+                else
+                {
+                    result += text[i];
+                }
+            }
+            return result;
+        }
     }
 }

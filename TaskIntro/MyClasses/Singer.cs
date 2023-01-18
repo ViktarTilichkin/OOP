@@ -7,7 +7,7 @@ namespace TaskIntro.MyClasses
         // выводить “{Name} {Surname), с наилучшими пожеланиями”.
         private string Name;
         private string Surname;
-        public Singer() : this("name", "sername")
+        public Singer() : this("Name", "Surname")
         {
         }
         public Singer(string name, string surname)
