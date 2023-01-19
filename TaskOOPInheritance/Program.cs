@@ -94,8 +94,11 @@ namespace MyApp // Note: actual namespace depends on the project name.
             // Console.WriteLine(artem.GetHistory());
             // Console.WriteLine();
             // Console.WriteLine(terminal);
-            Server new1 = new Server(1, "Viktor" , "Nameee" , "1A234");
-            Console.WriteLine(new1.GetUser());
+            // Server new1 = new Server(1, "Viktor" , "Nameee" , "1A234");
+            // Console.WriteLine(new1.GetUser());
+            Data new2 = new Data();
+            Console.WriteLine(new2.IsValidEmail("a@ba@ma.com"));
+            Console.WriteLine(new2.IsValidPwd("aaAA11"));
 
         }
     }

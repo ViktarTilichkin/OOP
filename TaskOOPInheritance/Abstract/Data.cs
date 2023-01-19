@@ -1,4 +1,5 @@
 namespace Abstract;
+using System.Text.RegularExpressions;
 // Реализовать класс Validation который содержит методы IsValidId, IsValidEmail,
 // IsValidPwd.
 // Реализовать класс наследник Data который полностью переопределяет все
@@ -13,9 +14,32 @@ namespace Abstract;
 // Результат каждой из функций должен возвращать true или false в зависимости от
 // условий
 
-public abstract class Validation
+public class Data : Validation
 {
-    public abstract bool IsValidId(object input);
-    public abstract bool IsValidEmail(string input);
-    public abstract bool IsValidPwd(string input);
+    public override bool IsValidId(object input)
+    {
+        if (input is int)
+        {
+            return true;
+        }
+        return false;
+    }
+    public override bool IsValidEmail(string input)
+    {
+        string pattern = @"(\b[a-z,A-Z,0-9]\w+\@+[a-z,A-Z,0-9]\w+\.+[a-z,A-Z]\w)";
+        if (Regex.IsMatch(input, pattern))
+        {
+            return true;
+        }
+        return false;
+    }
+    public override bool IsValidPwd(string input)
+    {
+        string pattern = @"(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])";
+        if (Regex.IsMatch(input, pattern))
+        {
+            return true;
+        }
+        return false;
+    }
 }
