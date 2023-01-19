@@ -3,6 +3,7 @@ using MyClasses.Transport;
 using Figurs;
 using Incapsulation;
 using PaymentSystems;
+using Abstract;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -73,27 +74,28 @@ namespace MyApp // Note: actual namespace depends on the project name.
             // Console.WriteLine(cn);
             // cn.Incriment();
             // Console.WriteLine(cn);
-            PaymentTerminal terminal = new PaymentTerminal("terminal");
-            Visa dima = new Visa("001", 1);
-            terminal.SetMoneyByPaymentSystem(10, dima);
-            dima.SetMoney(100);
-            terminal.SetMoneyByPaymentSystem(10, dima);
-            Console.WriteLine(dima);
-            Console.WriteLine();
-            Console.WriteLine(dima.GetHistory());
-            Console.WriteLine();
-            Console.WriteLine(terminal);
-            Console.WriteLine();
-            UnionPay artem = new UnionPay("002", 1);
-            artem.SetMoney(15000);
-            terminal.SetMoneyByPaymentSystem(15000, artem);
-            terminal.SetMoneyByPaymentSystem(10000, artem);
-            Console.WriteLine(artem);
-            Console.WriteLine();
-            Console.WriteLine(artem.GetHistory());
-            Console.WriteLine();
-            Console.WriteLine(terminal);
-            
+            // PaymentTerminal terminal = new PaymentTerminal("terminal");
+            // Visa dima = new Visa("001", 1);
+            // terminal.SetMoneyByPaymentSystem(10, dima);
+            // dima.SetMoney(100);
+            // terminal.SetMoneyByPaymentSystem(10, dima);
+            // Console.WriteLine(dima);
+            // Console.WriteLine();
+            // Console.WriteLine(dima.GetHistory());
+            // Console.WriteLine();
+            // Console.WriteLine(terminal);
+            // Console.WriteLine();
+            // UnionPay artem = new UnionPay("002", 1);
+            // artem.SetMoney(15000);
+            // terminal.SetMoneyByPaymentSystem(15000, artem);
+            // terminal.SetMoneyByPaymentSystem(10000, artem);
+            // Console.WriteLine(artem);
+            // Console.WriteLine();
+            // Console.WriteLine(artem.GetHistory());
+            // Console.WriteLine();
+            // Console.WriteLine(terminal);
+            Server new1 = new Server(1, "Viktor" , "Nameee" , "1A234");
+            Console.WriteLine(new1.GetUser());
 
         }
     }
