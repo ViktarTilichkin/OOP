@@ -105,7 +105,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
             // array.CreateUser("name" , "SurName" , "2222");
             // array.CreateUser("name1" , "SurName2" , "3333");
             // array.ShowUsers();
-            ProductionWorker name = new ProductionWorker(2, 10, "viktor", 1);
+            ProductionWorker name = new ProductionWorker(0, 10, "viktor", 1);
             Console.WriteLine(name);
         }
     }

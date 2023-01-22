@@ -5,19 +5,20 @@ public class ProductionWorker : MyClasses.Employee.Employee
     public int Shift = 1;
     public int WorkingShift
     {
-        get { return WorkingShift; }
         set
         {
-            if (value < 0 || value > 2)
+            if (value < 1 || value > 2)
             {
 
                 Console.WriteLine("error");
             }
             else
             {
-                WorkingShift = Shift;
+                Shift = value;
             }
         }
+        get { return Shift; }
+
     }
     public int HourlyWage { get; set; }
 
