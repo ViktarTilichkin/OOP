@@ -5,7 +5,7 @@ namespace Abstract.Db;
 // конец массива Db переданные данные
 public class ServerDb : Db
 {
-    public Db[]? Users { get; set; }
+    public Db[] Users { get; set; }
 
     private int Id = 1;
 
