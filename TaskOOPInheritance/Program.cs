@@ -3,6 +3,7 @@ using MyClasses.Transport;
 using Figurs;
 using Incapsulation;
 using PaymentSystems;
+using Abstract.Db;
 using Abstract;
 
 namespace MyApp // Note: actual namespace depends on the project name.
@@ -96,10 +97,13 @@ namespace MyApp // Note: actual namespace depends on the project name.
             // Console.WriteLine(terminal);
             // Server new1 = new Server(1, "Viktor" , "Nameee" , "1A234");
             // Console.WriteLine(new1.GetUser());
-            Data new2 = new Data();
-            Console.WriteLine(new2.IsValidEmail("a@ba@ma.com"));
-            Console.WriteLine(new2.IsValidPwd("aaAA11"));
-
+            // Data new2 = new Data();
+            // Console.WriteLine(new2.IsValidEmail("a@ba@ma.com"));
+            // Console.WriteLine(new2.IsValidPwd("aaAA11"));
+            ServerDb array = new ServerDb();
+            array.CreateUser("name" , "SurName" , "2222");
+            array.CreateUser("name1" , "SurName2" , "3333");
+            array.ShowUsers();
         }
     }
 }
