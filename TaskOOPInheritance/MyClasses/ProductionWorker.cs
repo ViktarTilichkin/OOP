@@ -5,10 +5,12 @@ public class ProductionWorker : MyClasses.Employee.Employee
     public int Shift = 1;
     public int WorkingShift
     {
+        get { return WorkingShift; }
         set
         {
             if (value < 0 || value > 2)
             {
+
                 Console.WriteLine("error");
             }
             else
@@ -23,5 +25,9 @@ public class ProductionWorker : MyClasses.Employee.Employee
     {
         WorkingShift = workShift;
         HourlyWage = hourWage;
+    }
+    public override string ToString()
+    {
+        return $"{WorkingShift} {HourlyWage}";
     }
 }
