@@ -2,22 +2,21 @@ namespace MyClasses.ProductionWorker;
 
 public class ProductionWorker : MyClasses.Employee.Employee
 {
-    public int Shift = 1;
+    private int shift = 1;
     public int WorkingShift
     {
+        get => shift;
         set
         {
             if (value < 1 || value > 2)
             {
-
-                Console.WriteLine("error");
+                throw new Exception("Wprking Shift out range");
             }
             else
             {
-                Shift = value;
+                shift = value;
             }
         }
-        get { return Shift; }
 
     }
     public double HourlyWage { get; set; }

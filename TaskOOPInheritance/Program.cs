@@ -125,7 +125,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 ProductionWorker worker = new ProductionWorker(Id, time, name, Id);
                 Console.WriteLine(worker);
             }
-           
+
         }
     }
 }

@@ -31,6 +31,7 @@ public class Employee
         Name = name;
         Id = id;
     }
+    
     public virtual void SetName(string name)
     {
         if (!string.IsNullOrEmpty(name))
@@ -55,7 +56,6 @@ public class Employee
             Console.WriteLine("error input");
         }
     }
-
     public override string ToString()
     {
         return $" Id : {Id} Name: {Name}";
