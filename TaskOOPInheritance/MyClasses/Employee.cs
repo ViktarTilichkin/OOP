@@ -12,7 +12,7 @@ namespace MyClasses.Employee;
 // Рабочий день разделен на две смены: дневную и вечернюю. Атрибут смены будет
 // содержать целочисленное значение, представляющее смену, в которую
 // сотрудник работает. Дневная смена является сменой 1, вечерняя смена –
-// сменой 2.
+// сменой 2.+
 // Напишите соответствующие методыполучатели и методы-модификаторы для
 // каждого класса.
 // После того как эти классы будут написаны, напишите программу, которая создает
@@ -24,15 +24,40 @@ namespace MyClasses.Employee;
 public class Employee
 {
     public string Name { get; set; }
-    public int Id { get; }
+    public int Id { get; set; }
 
     public Employee(string name, int id)
     {
         Name = name;
         Id = id;
     }
+    public virtual void SetName(string name)
+    {
+        if (!string.IsNullOrEmpty(name))
+        {
+            Name = name;
+            Console.WriteLine("succesful");
+        }
+        else
+        {
+            Console.WriteLine("error input");
+        }
+    }
+    public virtual void SetId(int id)
+    {
+        if (id > 0)
+        {
+            Id = id;
+            Console.WriteLine("succesful");
+        }
+        else
+        {
+            Console.WriteLine("error input");
+        }
+    }
+
     public override string ToString()
     {
-        return $"{Name} {Id}";
+        return $" Id : {Id} Name: {Name}";
     }
 }
