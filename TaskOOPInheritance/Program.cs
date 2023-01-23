@@ -105,8 +105,27 @@ namespace MyApp // Note: actual namespace depends on the project name.
             // array.CreateUser("name" , "SurName" , "2222");
             // array.CreateUser("name1" , "SurName2" , "3333");
             // array.ShowUsers();
-            ProductionWorker name = new ProductionWorker(0, 10, "viktor", 1);
-            Console.WriteLine(name);
+            TaskInheritance1();
+
+        }
+
+        static void TaskInheritance1()
+        {
+            Console.WriteLine("Создадим работника");
+            Console.Write("Введите его id: ");
+            string? id = Console.ReadLine();
+            Console.Write("Введите его Имя: ");
+            string? name = Console.ReadLine();
+            Console.Write("Введите смену в которую он работает 1 - дневная, 2 - вечернаяя: ");
+            string? shift = Console.ReadLine();
+            Console.Write("Часовая зарплата работника: ");
+            string? hourWage = Console.ReadLine();
+            if (int.TryParse(id, out int Id) && double.TryParse(hourWage, out double HourlyWage) && int.TryParse(shift, out int time) && !string.IsNullOrEmpty(name))
+            {
+                ProductionWorker worker = new ProductionWorker(Id, time, name, Id);
+                Console.WriteLine(worker);
+            }
+           
         }
     }
 }
