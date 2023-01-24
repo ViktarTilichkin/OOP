@@ -15,7 +15,7 @@ public class ProductionWorker : MyClasses.Employee.Employee
             else
             {
                 shift = value;
-            }
+            } 
         }
 
     }
