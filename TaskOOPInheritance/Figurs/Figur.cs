@@ -10,6 +10,6 @@ public class Figur
     }
     public virtual void Square()
     {
-        Console.WriteLine($"{Name} error square asds ");
+        Console.WriteLine($"{Name} error square");
     }
 }
