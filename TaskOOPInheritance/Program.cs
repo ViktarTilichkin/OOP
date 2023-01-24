@@ -101,10 +101,10 @@ namespace MyApp // Note: actual namespace depends on the project name.
             // Data new2 = new Data();
             // Console.WriteLine(new2.IsValidEmail("a@ba@ma.com"));
             // Console.WriteLine(new2.IsValidPwd("aaAA11"));
-            // ServerDb array = new ServerDb();
-            // array.CreateUser("name" , "SurName" , "2222");
-            // array.CreateUser("name1" , "SurName2" , "3333");
-            // array.ShowUsers();
+            ServerDb array = new ServerDb();
+            array.CreateUser("name" , "SurName" , "2222");
+            array.CreateUser("name1" , "SurName2" , "3333");
+            array.ShowUsers();
             TaskInheritance1();
 
         }
