@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationTransaction", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskOOPInheritance", "TaskOOPInheritance\TaskOOPInheritance.csproj", "{DD27A1BB-D556-496C-9022-671F4C60B016}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOPHomeTask", "OOPHomeTask\OOPHomeTask.csproj", "{92923E46-0177-491D-9717-C601678F6AFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{DD27A1BB-D556-496C-9022-671F4C60B016}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD27A1BB-D556-496C-9022-671F4C60B016}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD27A1BB-D556-496C-9022-671F4C60B016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92923E46-0177-491D-9717-C601678F6AFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92923E46-0177-491D-9717-C601678F6AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92923E46-0177-491D-9717-C601678F6AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92923E46-0177-491D-9717-C601678F6AFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
