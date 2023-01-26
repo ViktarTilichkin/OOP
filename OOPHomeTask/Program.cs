@@ -56,10 +56,14 @@ namespace MyApp
             array.Sort();
             Console.WriteLine(string.Join("; ", array));
             Console.WriteLine("firstordefault");
+            Func<int, bool> serchItem = x => x > 22;
+            int result2 = array.FirstOrDefault(serchItem);
             int result = array.FirstOrDefault(item => item > 10);
             Console.WriteLine($"firstordefault {result}");
             Func<int, int, int> ourDel = (x, y) => x + y;
             Console.WriteLine(ourDel(1,2));
+            Console.WriteLine("Hello");
+
         }
     }
 }
