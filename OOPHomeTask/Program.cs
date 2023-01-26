@@ -7,15 +7,15 @@ namespace MyApp
     {
         static void Main(string[] args)
         {
-            DbUser array = new DbUser(5);
-            array.AddUser(4, "viktor", 25);
+            var array = new CustomClass<string>(5);
             array.Show();
-            array.AddUser(2, "viktor123", 25);
-            array.AddUser(3, "vikto21312r123", 25);
+            array.AddValue("hello");
+            array.AddValue("world");
+            array.AddValue("and");
             array.Show();
-            array.RemoveById(4);
-            array.RemoveByValue("viktor123");
-            Console.WriteLine(array.Search("vikto21312r123"));
+            array.RemoveByIndex(0);
+            array.RemoveByValue("and");
+            Console.WriteLine(array.SearchIndex("world"));
             array.Show();
         }
     }

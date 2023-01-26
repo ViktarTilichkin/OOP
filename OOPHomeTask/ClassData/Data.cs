@@ -2,86 +2,80 @@ namespace ClassData;
 // Задача
 // Написать обобщенный класс (без ограничений)
 // поле Items массив 
-// метод добавления+
+// метод добавления
 // метод поиск индеса по значению
 // удаления значения (по индексу, удаление по занчению)
 // метод вывода
 
-public class DbUser
+public class CustomClass<T>
 {
-    public User[] ArrayUsers;
+    public T?[] ArrayT;
+    public int Index = 0;
 
-    public int Id = 1;
-
-    public DbUser(int arrayLength)
+    public CustomClass(int arrayLength)
     {
-        ArrayUsers = new User[arrayLength];
-        for (int i = 0; i < arrayLength; i++)
-        {
-            ArrayUsers[i] = new User(Id++);
-        }
+        ArrayT = new T[arrayLength];
     }
-    public bool AddUser(int id, string name, int age)
+    public bool AddValue(T value)
     {
-        ArrayUsers[id - 1].Name = name;
-        ArrayUsers[id - 1].Age = age;
-        return true;
-    }
-    public User? Search(string name)
-    {
-        if (!string.IsNullOrEmpty(name))
+        if (value != null)
         {
-            name.Trim();
-            for (int i = 0; i < ArrayUsers.Length; i++)
+            if(Index == ArrayT.Length)
             {
-                if (name.ToLower().Equals(ArrayUsers[i].Name.ToLower()))
+                return false;
+            }
+            ArrayT[Index++] = value;
+            return true;
+        }
+        return false;
+    }
+    public int SearchIndex(T value)
+    {
+        if (value != null)
+        {
+            for (int i = 0; i < ArrayT.Length; i++)
+            {
+                if (value.Equals(ArrayT[i]))
                 {
-                    return ArrayUsers[i];
+                    return i;
                 }
             }
         }
-        return null;
+        return -1;
     }
-    public bool RemoveById(int id)
+    public bool RemoveByIndex(int index)
     {
-        ArrayUsers[id - 1].Name = "dafault";
-        ArrayUsers[id - 1].Age = 0;
-        return true;
-    }
-    public bool RemoveByValue(string name)
-    {
-        if (!string.IsNullOrEmpty(name))
+        if (index >= 0 && index <= ArrayT.Length)
         {
-            name.Trim();
-            for (int i = 0; i < ArrayUsers.Length; i++)
+            ArrayT[index] = default;
+            return true;
+        }
+        return false;
+    }
+    public bool RemoveByValue(T value)
+    {
+        if (value != null)
+        {
+            for (int i = 0; i < ArrayT.Length; i++)
             {
-                if (name.ToLower().Equals(ArrayUsers[i].Name.ToLower()))
+                if (value.Equals(ArrayT[i]))
                 {
-                    ArrayUsers[i].Name = "defaul";
-                    ArrayUsers[i].Age = 0;
+                    ArrayT[i] = default;
+                    return true;
                 }
             }
         }
-        return true;
-    }
-    public bool RemoveByValue(int age)
-    {
-        for (int i = 0; i < ArrayUsers.Length; i++)
-        {
-            if (age == ArrayUsers[i].Age)
-            {
-                ArrayUsers[i].Name = "defaul";
-                ArrayUsers[i].Age = 0;
-            }
-        }
-        return true;
+        return false;
     }
 
     public void Show()
     {
-        foreach (User item in ArrayUsers)
+        foreach (T? item in ArrayT)
         {
-            Console.WriteLine(item);
+            if (item != null)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 
