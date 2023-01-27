@@ -12,6 +12,7 @@ public class CustomClass<T>
     public T?[] ArrayT;
     public int Index = 0;
 
+
     public CustomClass(int arrayLength)
     {
         ArrayT = new T[arrayLength];

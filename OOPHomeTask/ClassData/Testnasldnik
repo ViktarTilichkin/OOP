@@ -1,0 +1,26 @@
+namespace ClassData;
+
+public class TestClass : TestData
+{
+    public int Hight;
+    public TestClass()
+    {
+
+    }
+    public TestClass(string name, int age, int hight)
+    {
+        Name = name;
+        Hight = hight;
+        AgeS = age;
+        
+    }
+    public void Print2(string name)
+    {
+        base.Print(name);
+    }
+    public override void Print(string hello)
+    {
+        base.Print(hello);
+    }
+    
+}
