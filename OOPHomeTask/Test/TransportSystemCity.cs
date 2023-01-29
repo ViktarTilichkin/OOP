@@ -96,7 +96,7 @@ namespace OOPHomeTask.Test
                     return temp;
                 }
             }
-            throw new Exception("нет такой лодки");
+            throw new Exception(" нет такой лодки");
         }
         public void Print()
         {
