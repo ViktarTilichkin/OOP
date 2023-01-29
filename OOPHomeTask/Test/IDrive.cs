@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPHomeTask.Test
 {
-    internal interface IDrive
+    public interface IDrive
     {
         public void Otehal();
         public void Priehal();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPHomeTask.Test
 {
-    internal class Ship : Transport, ISwim
+    public class Ship : Transport, ISwim
     {
         public Ship(string name, string nameOfTransport) : base(name, nameOfTransport)
         {
@@ -24,6 +24,10 @@ namespace OOPHomeTask.Test
         public void Pripliv()
         {
             Console.WriteLine($"{Name} {NameOfTransport} priplil");
+        }
+        public override string ToString()
+        {
+            return $"{Name} {NameOfTransport}";
         }
     }
 }

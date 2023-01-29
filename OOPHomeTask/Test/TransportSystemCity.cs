@@ -12,11 +12,7 @@ namespace OOPHomeTask.Test
         private int CountPlane = 0;
         private int CountBus = 11;
         private int CountShip = 22;
-        public Transport?[] TransportCity;
-        public TransportSystemCity()
-        {
-            TransportCity = new Transport?[33];
-        }
+        public Transport?[] TransportCity = new Transport?[33];
 
         public void SetInAirport(string name, string nameOftranspor)
         {
@@ -54,44 +50,60 @@ namespace OOPHomeTask.Test
             lodka.Pripliv();
         }
 
-        public void GetFromAirport(string nameOfTransport)
+        public Plane? GetFromAirport(string nameOfTransport)
         {
             for (int i = 0; i < TransportCity.Length; i++)
             {
                 if (TransportCity[i].NameOfTransport == nameOfTransport)
                 {
+                    Plane? temp = (Plane)TransportCity[i];
                     TransportCity[i] = null;
+                    temp.Vzlet();
                     CountPlane--;
+                    return temp;
                 }
             }
             throw new Exception("нет такого самолета");
 
         }
 
-        public void GetFromBusStation(string nameOfTransport)
+        public Bus? GetFromBusStation(string nameOfTransport)
         {
             for (int i = 0; i < TransportCity.Length; i++)
             {
                 if (TransportCity[i].NameOfTransport == nameOfTransport)
                 {
+                    Bus? temp = (Bus)TransportCity[i];
                     TransportCity[i] = null;
+                    temp.Otehal();
                     CountBus--;
+                    return temp;
                 }
             }
             throw new Exception("нет такого автобуса");
         }
 
-        public void GetFromPort(string nameOfTransport)
+        public Ship? GetFromPort(string nameOfTransport)
         {
             for (int i = 0; i < TransportCity.Length; i++)
             {
                 if (TransportCity[i].NameOfTransport == nameOfTransport)
                 {
+                    Ship? temp = (Ship)TransportCity[i];
                     TransportCity[i] = null;
+                    temp.Otpliv();
                     CountShip--;
+                    return temp;
                 }
             }
             throw new Exception("нет такой лодки");
+        }
+        public void Print()
+        {
+            foreach (var item in TransportCity)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPHomeTask.Test
 {
-    internal abstract class Transport
+    public abstract class Transport
     {
         public string Name { get; set; }
         public string NameOfTransport { get; set; }

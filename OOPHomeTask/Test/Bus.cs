@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPHomeTask.Test
 {
-    internal class Bus : Transport, IDrive
+    public class Bus : Transport, IDrive
     {
         public Bus(string name, string nameOfTransport) : base(name, nameOfTransport)
         {
@@ -24,6 +24,10 @@ namespace OOPHomeTask.Test
         public void Priehal()
         {
             Console.WriteLine($"{Name} {NameOfTransport} Priehal");
+        }
+        public override string ToString()
+        {
+            return $"{Name} {NameOfTransport}";
         }
     }
 }

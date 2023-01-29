@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPHomeTask.Test
 {
-    internal interface IFly
+    public interface IFly
     {
         public void Vzlet();
         public void Posadka();

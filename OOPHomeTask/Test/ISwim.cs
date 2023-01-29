@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace OOPHomeTask.Test
 {
-    internal interface ISwim
+    public interface ISwim
     {
         public void Otpliv();
         public void Pripliv();
     }
+    
 }
