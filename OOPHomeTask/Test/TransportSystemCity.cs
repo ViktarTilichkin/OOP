@@ -9,69 +9,98 @@ namespace OOPHomeTask.Test
 {
     public class TransportSystemCity
     {
-        private int CountPlane = 0;
-        private int CountBus = 11;
-        private int CountShip = 22;
-        public Transport?[] TransportCity = new Transport?[33];
+        private int CountPlane;
+        private int CountBus;
+        private int CountShip;
+        private Transport[] TransportCity;
 
-        public void SetInAirport(string name, string nameOftranspor)
+        public TransportSystemCity()
         {
-            if (CountPlane == 10)
+            TransportCity = new Transport[33];
+        }
+        public void SetInAirport(Plane plane)
+        {
+            if (plane == null) throw new ArgumentNullException(nameof(plane));
+            if (CountPlane == 11)
             {
                 throw new Exception("нет места");
 
             }
-            Plane plane = new Plane(name, nameOftranspor);
-            TransportCity[CountPlane++] = plane;
-            plane.Posadka();
-
-        }
-        public void SetInBusStation(string name, string nameOftranspor)
-        {
-            if (CountBus == 21)
-            {
-                throw new Exception("нет места");
-
-            }
-            Bus bus = new Bus(name, nameOftranspor);
-            TransportCity[CountBus++] = bus;
-            bus.Priehal();
-
-        }
-        public void SetInPort(string name, string nameOftranspor)
-        {
-            if (CountShip == 32)
-            {
-                throw new Exception("нет места");
-
-            }
-            Ship lodka = new Ship(name, nameOftranspor);
-            TransportCity[CountShip++] = lodka;
-            lodka.Pripliv();
-        }
-
-        public Plane? GetFromAirport(string nameOfTransport)
-        {
             for (int i = 0; i < TransportCity.Length; i++)
             {
-                if (TransportCity[i].NameOfTransport == nameOfTransport)
+                if (TransportCity[i] == null)
                 {
-                    Plane? temp = (Plane)TransportCity[i];
-                    TransportCity[i] = null;
-                    temp.Vzlet();
-                    CountPlane--;
-                    return temp;
+                    TransportCity[i] = plane;
+                    plane.Posadka();
+                    CountPlane++;
+                    return;
                 }
             }
-            throw new Exception("нет такого самолета");
 
         }
+        public void SetInBusStation(Bus bus)
+        {
+            if (bus == null) throw new ArgumentNullException(nameof(bus));
+            if (CountBus == 11)
+            {
+                throw new Exception("нет места");
 
-        public Bus? GetFromBusStation(string nameOfTransport)
+            }
+            for (int i = 0; i < TransportCity.Length; i++)
+            {
+                if (TransportCity[i] == null)
+                {
+                    TransportCity[i] = bus;
+                    bus.Priehal();
+                    CountBus++;
+                    return;
+                }
+            }
+        }
+        public void SetInPort(Ship lodka)
+        {
+            if (lodka == null) throw new ArgumentNullException(nameof(lodka));
+            if (CountShip == 11)
+            {
+                throw new Exception("нет места");
+
+            }
+            for (int i = 0; i < TransportCity.Length; i++)
+            {
+                if (TransportCity[i] == null)
+                {
+                    TransportCity[i] = lodka;
+                    lodka.Pripliv();
+                    CountShip++;
+                    return;
+                }
+            }
+        }
+
+        public Plane GetFromAirport(int nameOfTransport)
         {
             for (int i = 0; i < TransportCity.Length; i++)
             {
-                if (TransportCity[i].NameOfTransport == nameOfTransport)
+                var transport = TransportCity[i];
+                if (transport == null) continue;
+                if (transport.NumberOfTransport == nameOfTransport && transport is Plane plane)
+                {
+                    TransportCity[i] = null;
+                    plane.Vzlet();
+                    CountPlane--;
+                    return plane;
+                }
+            }
+            throw new Exception($"нет самолета {nameOfTransport}");
+        }
+
+        public Bus? GetFromBusStation(int nameOfTransport)
+        {
+            for (int i = 0; i < TransportCity.Length; i++)
+            {
+                var transport = TransportCity[i];
+                if (transport == null) continue;
+                if (transport.NumberOfTransport == nameOfTransport && transport is Plane plane)
                 {
                     Bus? temp = (Bus)TransportCity[i];
                     TransportCity[i] = null;
@@ -83,11 +112,13 @@ namespace OOPHomeTask.Test
             throw new Exception("нет такого автобуса");
         }
 
-        public Ship? GetFromPort(string nameOfTransport)
+        public Ship? GetFromPort(int nameOfTransport)
         {
             for (int i = 0; i < TransportCity.Length; i++)
             {
-                if (TransportCity[i].NameOfTransport == nameOfTransport)
+                var transport = TransportCity[i];
+                if (transport == null) continue;
+                if (transport.NumberOfTransport == nameOfTransport && transport is Plane plane)
                 {
                     Ship? temp = (Ship)TransportCity[i];
                     TransportCity[i] = null;

@@ -8,26 +8,26 @@ namespace OOPHomeTask.Test
 {
     public class Ship : Transport, ISwim
     {
-        public Ship(string name, string nameOfTransport) : base(name, nameOfTransport)
+        public Ship(string name, int nameOfTransport) : base(name, nameOfTransport)
         {
 
         }
         public override void Move()
         {
-            Console.WriteLine($"{Name} {NameOfTransport} is moving");
+            Console.WriteLine($"{Name} {NumberOfTransport} is moving");
         }
         public void Otpliv()
         {
-            Console.WriteLine($"{Name} {NameOfTransport} uplil");
+            Console.WriteLine($"{Name} {NumberOfTransport} uplil");
         }
 
         public void Pripliv()
         {
-            Console.WriteLine($"{Name} {NameOfTransport} priplil");
+            Console.WriteLine($"{Name} {NumberOfTransport} priplil");
         }
         public override string ToString()
         {
-            return $"{Name} {NameOfTransport}";
+            return $"{Name} {NumberOfTransport}";
         }
     }
 }

@@ -9,12 +9,12 @@ namespace OOPHomeTask.Test
     public abstract class Transport
     {
         public string Name { get; set; }
-        public string NameOfTransport { get; set; }
+        public int NumberOfTransport { get; set; }
 
-        public Transport(string name, string nameOfTransport)
+        public Transport(string name, int nameOfTransport)
         {
             Name = name;
-            NameOfTransport = nameOfTransport;
+            NumberOfTransport = nameOfTransport;
         }
 
         public abstract void Move();

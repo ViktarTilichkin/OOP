@@ -9,26 +9,26 @@ namespace OOPHomeTask.Test
 {
     public class Plane : Transport, IFly
     {
-        public Plane(string name, string nameOfTransport) : base(name, nameOfTransport)
+        public Plane(string name, int nameOfTransport) : base(name, nameOfTransport)
         {
 
         }
         public override void Move()
         {
-            Console.WriteLine($" {Name} {NameOfTransport} is moving");
+            Console.WriteLine($" {Name} {NumberOfTransport} is moving");
         }
         public void Vzlet()
         {
-            Console.WriteLine($" {Name} {NameOfTransport} vzletel");
+            Console.WriteLine($" {Name} {NumberOfTransport} vzletel");
         }
 
         public void Posadka()
         {
-            Console.WriteLine($"{Name} {NameOfTransport} sel");
+            Console.WriteLine($"{Name} {NumberOfTransport} sel");
         }
         public override string ToString()
         {
-            return $"{Name} {NameOfTransport}";
+            return $"{Name} {NumberOfTransport}";
         }
     }
 }

@@ -8,26 +8,26 @@ namespace OOPHomeTask.Test
 {
     public class Bus : Transport, IDrive
     {
-        public Bus(string name, string nameOfTransport) : base(name, nameOfTransport)
+        public Bus(string name, int nameOfTransport) : base(name, nameOfTransport)
         {
 
         }
         public override void Move()
         {
-            Console.WriteLine($" {Name} {NameOfTransport} is moving");
+            Console.WriteLine($" {Name} {NumberOfTransport} is moving");
         }
         public void Otehal()
         {
-            Console.WriteLine($" {Name} {NameOfTransport} otehal");
+            Console.WriteLine($" {Name} {NumberOfTransport} otehal");
         }
 
         public void Priehal()
         {
-            Console.WriteLine($"{Name} {NameOfTransport} Priehal");
+            Console.WriteLine($"{Name} {NumberOfTransport} Priehal");
         }
         public override string ToString()
         {
-            return $"{Name} {NameOfTransport}";
+            return $"{Name} {NumberOfTransport}";
         }
     }
 }
