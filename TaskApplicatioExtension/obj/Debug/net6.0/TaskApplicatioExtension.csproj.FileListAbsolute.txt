@@ -1,0 +1,15 @@
+C:\Users\Flog\Documents\Hscool\OOP\TaskApplicatioExtension\bin\Debug\net6.0\TaskApplicatioExtension.exe
+C:\Users\Flog\Documents\Hscool\OOP\TaskApplicatioExtension\bin\Debug\net6.0\TaskApplicatioExtension.deps.json
+C:\Users\Flog\Documents\Hscool\OOP\TaskApplicatioExtension\bin\Debug\net6.0\TaskApplicatioExtension.runtimeconfig.json
+C:\Users\Flog\Documents\Hscool\OOP\TaskApplicatioExtension\bin\Debug\net6.0\TaskApplicatioExtension.dll
+C:\Users\Flog\Documents\Hscool\OOP\TaskApplicatioExtension\bin\Debug\net6.0\TaskApplicatioExtension.pdb
+C:\Users\Flog\Documents\Hscool\OOP\TaskApplicatioExtension\obj\Debug\net6.0\TaskApplicatioExtension.csproj.AssemblyReference.cache
+C:\Users\Flog\Documents\Hscool\OOP\TaskApplicatioExtension\obj\Debug\net6.0\TaskApplicatioExtension.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Flog\Documents\Hscool\OOP\TaskApplicatioExtension\obj\Debug\net6.0\TaskApplicatioExtension.AssemblyInfoInputs.cache
+C:\Users\Flog\Documents\Hscool\OOP\TaskApplicatioExtension\obj\Debug\net6.0\TaskApplicatioExtension.AssemblyInfo.cs
+C:\Users\Flog\Documents\Hscool\OOP\TaskApplicatioExtension\obj\Debug\net6.0\TaskApplicatioExtension.csproj.CoreCompileInputs.cache
+C:\Users\Flog\Documents\Hscool\OOP\TaskApplicatioExtension\obj\Debug\net6.0\TaskApplicatioExtension.dll
+C:\Users\Flog\Documents\Hscool\OOP\TaskApplicatioExtension\obj\Debug\net6.0\refint\TaskApplicatioExtension.dll
+C:\Users\Flog\Documents\Hscool\OOP\TaskApplicatioExtension\obj\Debug\net6.0\TaskApplicatioExtension.pdb
+C:\Users\Flog\Documents\Hscool\OOP\TaskApplicatioExtension\obj\Debug\net6.0\TaskApplicatioExtension.genruntimeconfig.cache
+C:\Users\Flog\Documents\Hscool\OOP\TaskApplicatioExtension\obj\Debug\net6.0\ref\TaskApplicatioExtension.dll
