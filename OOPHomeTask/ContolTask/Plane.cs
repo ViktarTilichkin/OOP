@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace OOPHomeTask.Test
+namespace OOPHomeTask.ControlTask
 {
     public class Plane : Transport, IFly
     {

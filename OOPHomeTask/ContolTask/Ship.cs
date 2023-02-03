@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOPHomeTask.Test
+namespace OOPHomeTask.ControlTask
 {
     public class Ship : Transport, ISwim
     {
