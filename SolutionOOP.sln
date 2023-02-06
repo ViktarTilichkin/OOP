@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskApplicatioExtension", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayliApp", "DayliApp\DayliApp.csproj", "{C8F92F3E-2B94-4D32-A9C6-6510D9FE3540}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSystem", "FileSystem\FileSystem.csproj", "{0782AAC6-4262-4BEA-B5CE-B40DE0299CD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,5 +56,9 @@ Global
 		{C8F92F3E-2B94-4D32-A9C6-6510D9FE3540}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8F92F3E-2B94-4D32-A9C6-6510D9FE3540}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8F92F3E-2B94-4D32-A9C6-6510D9FE3540}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0782AAC6-4262-4BEA-B5CE-B40DE0299CD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0782AAC6-4262-4BEA-B5CE-B40DE0299CD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0782AAC6-4262-4BEA-B5CE-B40DE0299CD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0782AAC6-4262-4BEA-B5CE-B40DE0299CD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
