@@ -8,7 +8,7 @@ namespace OOPHomeTask.ControlTask
 {
     public class Ship : Transport, ISwim
     {
-        public Ship(string name, int nameOfTransport) : base(name, nameOfTransport)
+        public Ship(string name, int numberOfTransport, int countSeats) : base(name, numberOfTransport, countSeats)
         {
 
         }

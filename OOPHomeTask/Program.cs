@@ -55,48 +55,77 @@ namespace MyApp
             //Console.WriteLine(ourDel(1, 2));
             //Console.WriteLine("Hello");
 
-            List<int> list = new List<int>();
-            Random random = new Random();
-            for(int i = 0; i <20; i++)
-            {
-                list.Add(i);
-            }
-            LinkedList<int> linkedlist = new LinkedList<int>();
-            for (int i = 0; i < 20; i++)
-            {
-                linkedlist.AddLast(i);
-            }
-            Stack<int> stack = new Stack<int>();
-            for (int i = 0; i < 20; i++)
-            {
-                stack.Push(i);
-            }
-            Dictionary<int,string> dictionary = new Dictionary<int,string>();
-            for (int i = 0; i < 20; i++)
-            {
-                int value = random.Next(0, 500);
-                string text = $"Hello {i} element";
-                dictionary.Add(i,text);
-            }
-            foreach(int item in list)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine();
-            foreach (int item in linkedlist)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine();
-            foreach (int item in stack)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine();
-            foreach (var item in dictionary)
-            {
-                Console.WriteLine(item);
-            }
+            //List<int> list = new List<int>();
+            //Random random = new Random();
+            //for(int i = 0; i <20; i++)
+            //{
+            //    list.Add(i);
+            //}
+            //LinkedList<int> linkedlist = new LinkedList<int>();
+            //for (int i = 0; i < 20; i++)
+            //{
+            //    linkedlist.AddLast(i);
+            //}
+            //Stack<int> stack = new Stack<int>();
+            //for (int i = 0; i < 20; i++)
+            //{
+            //    stack.Push(i);
+            //}
+            //Dictionary<int,string> dictionary = new Dictionary<int,string>();
+            //for (int i = 0; i < 20; i++)
+            //{
+            //    int value = random.Next(0, 500);
+            //    string text = $"Hello {i} element";
+            //    dictionary.Add(i,text);
+            //}
+            //foreach(int item in list)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine();
+            //foreach (int item in linkedlist)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine();
+            //foreach (int item in stack)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine();
+            //foreach (var item in dictionary)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+            TransportSystemCity minsk = new TransportSystemCity();
+            Plane aeroflot = new Plane("vesna", 777, 25);
+            Bus avtobus = new Bus("Икарус", 91, 10);
+            Ship lodka = new Ship("Теплоход Заря", 5, 10);
+            minsk.SetInAirport(aeroflot);
+            minsk.SetInBusStation(avtobus);
+            minsk.SetInPort(lodka);
+            Console.WriteLine("----BuyPlaneTicket---");
+            Console.WriteLine(minsk.BuyPlaneTicket(777, 20));
+            Console.WriteLine("----BuyBusTicket-----");
+            Console.WriteLine(minsk.BuyBusTicket(91, 15));
+            Console.WriteLine("----BuyShipTicket----");
+            Console.WriteLine(minsk.BuyShipTicket(8, 10));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 }

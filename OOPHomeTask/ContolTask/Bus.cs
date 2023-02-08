@@ -8,7 +8,7 @@ namespace OOPHomeTask.ControlTask
 {
     public class Bus : Transport, IDrive
     {
-        public Bus(string name, int nameOfTransport) : base(name, nameOfTransport)
+        public Bus(string name, int numberOfTransport, int countSeats) : base(name, numberOfTransport, countSeats)
         {
 
         }

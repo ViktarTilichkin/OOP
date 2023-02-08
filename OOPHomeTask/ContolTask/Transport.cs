@@ -10,11 +10,13 @@ namespace OOPHomeTask.ControlTask
     {
         public string Name { get; set; }
         public int NumberOfTransport { get; set; }
+        public int CountSeats { get; set; }
 
-        public Transport(string name, int nameOfTransport)
+        public Transport(string name, int numberOfTransport, int countSeats)
         {
             Name = name;
-            NumberOfTransport = nameOfTransport;
+            NumberOfTransport = numberOfTransport;
+            CountSeats = countSeats;
         }
 
         public abstract void Move();

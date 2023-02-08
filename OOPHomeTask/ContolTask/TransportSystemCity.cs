@@ -28,6 +28,14 @@ namespace OOPHomeTask.ControlTask
             }
             for (int i = 0; i < TransportCity.Length; i++)
             {
+                if (TransportCity[i] == null) continue;
+                if (TransportCity[i].NumberOfTransport == plane.NumberOfTransport)
+                {
+                    throw new Exception("такой транспорт уже на станции");
+                }
+            }
+            for (int i = 0; i < TransportCity.Length; i++)
+            {
                 if (TransportCity[i] == null)
                 {
                     TransportCity[i] = plane;
@@ -45,6 +53,14 @@ namespace OOPHomeTask.ControlTask
             {
                 throw new Exception("нет места");
 
+            }
+            for (int i = 0; i < TransportCity.Length; i++)
+            {
+                if (TransportCity[i] == null) continue;
+                if (TransportCity[i].NumberOfTransport == bus.NumberOfTransport)
+                {
+                    throw new Exception("такой транспорт уже на станции");
+                }
             }
             for (int i = 0; i < TransportCity.Length; i++)
             {
@@ -67,6 +83,14 @@ namespace OOPHomeTask.ControlTask
             }
             for (int i = 0; i < TransportCity.Length; i++)
             {
+                if (TransportCity[i] == null) continue;
+                if (TransportCity[i].NumberOfTransport == lodka.NumberOfTransport)
+                {
+                    throw new Exception("такой транспорт уже на станции");
+                }
+            }
+            for (int i = 0; i < TransportCity.Length; i++)
+            {
                 if (TransportCity[i] == null)
                 {
                     TransportCity[i] = lodka;
@@ -77,13 +101,13 @@ namespace OOPHomeTask.ControlTask
             }
         }
 
-        public Plane GetFromAirport(int nameOfTransport)
+        public Plane GetFromAirport(int numberOfTransport)
         {
             for (int i = 0; i < TransportCity.Length; i++)
             {
                 var transport = TransportCity[i];
                 if (transport == null) continue;
-                if (transport.NumberOfTransport == nameOfTransport && transport is Plane plane)
+                if (transport.NumberOfTransport == numberOfTransport && transport is Plane plane)
                 {
                     TransportCity[i] = null;
                     plane.Vzlet();
@@ -91,16 +115,16 @@ namespace OOPHomeTask.ControlTask
                     return plane;
                 }
             }
-            throw new Exception($"нет самолета {nameOfTransport}");
+            throw new Exception($"нет самолета {numberOfTransport}");
         }
 
-        public Bus? GetFromBusStation(int nameOfTransport)
+        public Bus? GetFromBusStation(int numberOfTransport)
         {
             for (int i = 0; i < TransportCity.Length; i++)
             {
                 var transport = TransportCity[i];
                 if (transport == null) continue;
-                if (transport.NumberOfTransport == nameOfTransport && transport is Plane plane)
+                if (transport.NumberOfTransport == numberOfTransport && transport is Plane plane)
                 {
                     Bus? temp = (Bus)TransportCity[i];
                     TransportCity[i] = null;
@@ -128,6 +152,64 @@ namespace OOPHomeTask.ControlTask
                 }
             }
             throw new Exception(" нет такой лодки");
+        }
+
+        public (bool, string) BuyPlaneTicket(int numberOfTransport, int countTicket)
+        {
+            for (int i = 0; i < TransportCity.Length; i++)
+            {
+                var transport = TransportCity[i];
+                if (transport == null) continue;
+                if (transport.NumberOfTransport == numberOfTransport && transport is Plane plane)
+                {
+                    int transportSeats = transport.CountSeats - countTicket;
+                    if (transportSeats >= 0)
+                    {
+                        TransportCity[i].CountSeats = transportSeats;
+                        return (true, $"Вы купили {countTicket} билетов");
+                    }
+                    return (false, $"У транспорного средства осталось {transport.CountSeats} свободных мест");
+                }
+            }
+            return (false, $"Такого транспорта нет");
+        }
+        public (bool, string) BuyBusTicket(int numberOfTransport, int countTicket)
+        {
+            for (int i = 0; i < TransportCity.Length; i++)
+            {
+                var transport = TransportCity[i];
+                if (transport == null) continue;
+                if (transport.NumberOfTransport == numberOfTransport && transport is Bus bus)
+                {
+                    int transportSeats = transport.CountSeats - countTicket;
+                    if (transportSeats >= 0)
+                    {
+                        TransportCity[i].CountSeats = transportSeats;
+                        return (true, $"Вы купили {countTicket} билетов");
+                    }
+                    return (false, $"У транспорного средства осталось {transport.CountSeats} свободных мест");
+                }
+            }
+            return (false, $"Такого транспорта нет");
+        }
+        public (bool, string) BuyShipTicket(int numberOfTransport, int countTicket)
+        {
+            for (int i = 0; i < TransportCity.Length; i++)
+            {
+                var transport = TransportCity[i];
+                if (transport == null) continue;
+                if (transport.NumberOfTransport == numberOfTransport && transport is Ship ship)
+                {
+                    int transportSeats = transport.CountSeats - countTicket;
+                    if (transportSeats >= 0)
+                    {
+                        TransportCity[i].CountSeats = transportSeats;
+                        return (true, $"Вы купили {countTicket} билетов");
+                    }
+                    return (false, $"У транспорного средства осталось {transport.CountSeats} свободных мест");
+                }
+            }
+            return (false, $"Такого транспорта нет");
         }
         public void Print()
         {

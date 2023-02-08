@@ -9,7 +9,7 @@ namespace OOPHomeTask.ControlTask
 {
     public class Plane : Transport, IFly
     {
-        public Plane(string name, int nameOfTransport) : base(name, nameOfTransport)
+        public Plane(string name, int numberOfTransport, int countSeats) : base(name, numberOfTransport, countSeats)
         {
 
         }
