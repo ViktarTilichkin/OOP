@@ -3,188 +3,94 @@ using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace MyApp // Note: actual namespace depends on the project name.
+//1.Напишите программу, в которой с помощью делегатов и анонимных методов (лямбдавыражений) создается экземпляр делегата, который вызывается без аргументов, а
+//результатом возвращает текстовое значение с названием дня недели ("Понедельник",
+//"Вторник" и так до "Воскресенья"). При каждом новом вызове экземпляра результатом
+//возвращается название следующего дня недели. После "Воскресенья" результатом
+//возвращается "Понедельник" и так далее.
+//2. Напишите программу, содержащую статический метод с тремя действительными (тип
+//double) аргументами.Результатом статического метода является ссылка на метод,
+//вычисляющий квадратичный трехчлен с коэффициентами, определяемыми аргументами
+//статического метода. Другими словами, если статический метод вызывается с числовыми
+//аргументами a, b и с, то результатом является ссылка на метод, который для аргумента x
+//типа double результатом вычисляет значение выражения a*x*x+b*x+c.
+
+
+namespace MyApp
 {
-    //internal class Program
-    //{
-    //delegate int CalculateValues(int num1, int num2, int num3);
-    //static void Main(string[] args)
-    //{
-    //    CalculateValues method = new InnerProgram1().Sum;
-    //    Console.WriteLine(method(5, 2, 4));
-    //    method = InnerProgram1.Multiplication;
-    //    Console.WriteLine(method(5, 2, 4));
-    //    Test testing = new Test();
-    //    method = testing.Custom;
-    //    Console.WriteLine(method(5, 2, 4));
-    //    Console.ReadKey();
-    //}
-    //public class InnerProgram1
-    //{
-    //    public int Sum(int num1, int num2, int num3)
-    //    {
-    //        return num1 + num2 + num3;
-    //    }
-    //    public static int Multiplication(int num1, int num2, int num3)
-    //    {
-    //        return num1 * num2 * num3;
-    //    }
-    //    public int Custom(int num1, int num2, int num3)
-    //    {
-    //        return (num1 + num2 * num3);
-    //    }
-    //}
-
-    //public delegate void CalculateValues(double x);
-    //delegate void UserDecorator(ref User user);
-    //static void Main(string[] args)
-    //{
-    //CalculateValues method = Mult2;
-    //method += Mult3;
-    //method += Sqr;
-    //method(5);
-    //Console.WriteLine("-----");
-    //method -= Mult2;
-    //method(5);
-    //Console.WriteLine("-----");
-    //method -= Mult3;
-    //method(5);
-    //User kek = null;
-    //UserDecorator customUser = AddAge;
-    //customUser += AddName;
-    //customUser += AddId;
-    //customUser(ref kek);
-    //Console.WriteLine(kek);
-    //Console.ReadKey();
-    //CalculateValues method = delegate (double value)
-    //{
-    //    Console.WriteLine((value + value) / 3);
-
-    //};
-    //method += Mult3;
-    //method += Mult2;
-    //Test(method);
-
-    //method = (double value) =>
-    //{
-    //    Console.WriteLine((value + value) / 3);
-    //};
-    //Test(method);
-    //Console.ReadKey();
-    //}
-
-    //public static void Test(CalculateValues method)
-    //{
-    //    Console.WriteLine("введите число");
-    //    double x = Convert.ToDouble(Console.ReadLine());
-    //    method(x);
-    //}
-    //public static void CreateUser(ref User user)
-    //{
-    //    user = new User();
-    //}
-    //public static void AddId(ref User user)
-    //{
-    //    if (user == null) CreateUser(ref user);
-    //    user.Id = 5;
-    //}
-    //public static void AddName(ref User user)
-    //{
-    //    if (user == null) CreateUser(ref user);
-    //    user.Name = "cucumber";
-    //}
-    //public static void AddAge(ref User user)
-    //{
-    //    if (user == null) CreateUser(ref user);
-    //    user.Age = 66;
-    //}
-    //public static void Mult2(double x)
-    //{
-    //    Console.WriteLine($"Mult2 {x * 2}");
-    //}
-    //public static void Mult3(double x)
-    //{
-    //    Console.WriteLine($"Mult3 {x * 3}");
-    //}
-    //public static void Sqr(double x)
-    //{
-    //    Console.WriteLine($"Sqr {x * x}");
-    //}
-
-    //}
     internal class Program
     {
-        public delegate bool CalculateValues(bool num1);
+        public delegate void DayOfWeek();
+        public delegate void Discriminant(params double[] values);
         static void Main(string[] args)
         {
-
-            //List<int> lsit = new List<int>();
-            //lsit.Add(1);
-            //lsit.Add(2);
-            //lsit.Add(3);
-            //lsit.Add(4);
-            //lsit.Add(5);
-            //lsit.Add(6);
-            //lsit.Add(7);
-            //Filter<int> method = delegate (int value)
-            //{
-            //    return value % 2 == 0;
-
-            //};
-            //List<int> newlist = lsit.FilterList(method);
-            ////Console.ReadKey();
-            //List<User> list = new List<User>();
-            //Random rnd = new Random();
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    User user = new User();
-            //    user.Id = i + 1;
-            //    user.Name = $"{user.Id} + Name";
-            //    user.Age = rnd.Next(10, 25);
-            //    list.Add(user);
-            //}
-            //Filter<User> filt = (User user) => user.Id % 3 == 0;
-            //List<User> newlist2 = list.FilterList(filt);
-            //foreach (var item in newlist2)
-            //{
-            //    Console.WriteLine(item);
-            //}
-            //Console.ReadKey();
-            //ICustomFile customfile = null;/*new PDFFile();*/
-            ////customfile.Create("cucumber");
-            ////Console.WriteLine(customfile.GetSize());
-            ////customfile = new WordFile();
-            ////customfile.Create("pamidor");
-            ////Console.WriteLine(customfile.GetSize());
-            ////customfile = new SvgFile();
-            ////customfile.Create("svg");
-            ////Console.WriteLine(customfile.GetSize());
-
-            //switch (Console.ReadLine())
-            //{
-            //    case "1":
-            //        customfile = new PDFFile();
-            //        break;
-            //    case "2":
-            //        customfile = new WordFile();
-            //        break;
-            //    default:
-            //        customfile = new SvgFile();
-            //        break;
-            //}
-            //customfile.Create("pamidor");
-            //Console.WriteLine(customfile.GetSize());
-            //Console.ReadKey();
-
-            ICustomFile customfile = Console.ReadLine() switch
-            { 
-                "1" => new PDFFile(),
-                "2" => new WordFile(),
-                _  => new SvgFile(),
+            int thisDay = 0;
+            DayOfWeek dayMessage = () =>
+            {
+                switch (thisDay)
+                {
+                    case 0:
+                        Console.WriteLine("Monday");
+                        break;
+                    case 1:
+                        Console.WriteLine("Tuesday");
+                        break;
+                    case 2:
+                        Console.WriteLine("Wednesday");
+                        break;
+                    case 3:
+                        Console.WriteLine("Thusday");
+                        break;
+                    case 4:
+                        Console.WriteLine("Friday");
+                        break;
+                    case 5:
+                        Console.WriteLine("Saturday");
+                        break;
+                    case 6:
+                        Console.WriteLine("Sunday");
+                        thisDay = 0;
+                        break;
+                };
+                thisDay++;
             };
-            customfile.Create("pamidor");
-            Console.WriteLine(customfile.GetSize());
-            Console.ReadKey();
+            dayMessage();
+            dayMessage();
+            dayMessage();
+            dayMessage();
+            dayMessage();
+            dayMessage();
+            dayMessage();
+            dayMessage();
+            dayMessage();
+            Discriminant discrim = (double[] values) =>
+            {
+                if (values.Length == 3)
+                {
+                    double a = values[0];
+                    double b = values[1];
+                    double c = values[2];
+                    DiscriminantCalculate(a, b, c);
+                }
+            };
+            discrim(5, 25, 7);
+            discrim(5);
+        }
+        public static void DiscriminantCalculate(double a, double b, double c)
+        {
+            double D = Math.Pow(b, 2) - 4 * a * c;
+            if (D < 0) Console.WriteLine("Нет действительных корней");
+            else if (D == 0)
+            {
+                double x = -(b / (2 * a));
+                Console.WriteLine($"D = {D}, уравнение имеет один корень равный {x}");
+            }
+            else if (D > 1)
+            {
+                double x1 = (-b + Math.Sqrt(D)) / (2 * a);
+                double x2 = (-b - Math.Sqrt(D)) / (2 * a);
+                Console.WriteLine($"D = {D}, X1 = {x1}, X2 = {x2}");
+            }
         }
     }
 }
