@@ -8,6 +8,7 @@ namespace Abstract.Db;
 
 public class Db : User
 {
+
     public Db()
     {
 

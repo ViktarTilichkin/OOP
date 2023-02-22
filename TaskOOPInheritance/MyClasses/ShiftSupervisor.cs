@@ -10,4 +10,9 @@ public class ShiftSupervisor : MyClasses.Employee.Employee
         YearWage = yearWage;
         ProductionBonus = productBonus;
     }
+
+    public override string ToString()
+    {
+        return $"{Name} earned {YearWage} this year, the bonus for completing the plane tree was {ProductionBonus}";
+    }
 }
