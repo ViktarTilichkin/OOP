@@ -13,7 +13,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
             //object test = "5";
             //Console.WriteLine(test.TryToConvert(out string result));
             //Console.WriteLine(result);
-            //Console.WriteLine(FileTypes.pdf.FileTypeMessage());
+            Console.WriteLine(FileTypes.pdf.FileTypeMessage());
         }
     }
 }

@@ -23,101 +23,80 @@ namespace MyApp
     {
         static void Main(string[] args)
         {
-            //var array = new CustomClass<string>(5);
-            //array.Show();
-            //array.AddValue("hello");
-            //array.AddValue("world");
-            //array.AddValue("and");
-            //array.Show();
-            //array.RemoveByIndex(0);
-            //array.RemoveByValue("and");
-            //Console.WriteLine(array.SearchIndex("world"));
-            //array.Show();
-            //List<int> arrayS = new List<int>(20);
-            //Console.WriteLine(arrayS.FirstOrDefault(x => x > 1));
-            //Console.WriteLine(arrayS.FindIndex(x => x > 4));
-            //for (int i = 0; i < arrayS.Count; i++)
-            //{
-            //    if (arrayS[i] == 5)
-            //    {
-            //        Console.WriteLine(i);
-            //    }
-            //}
-            //Console.WriteLine(string.Join("; ", array));
-            //arrayS.Sort();
-            //Console.WriteLine(string.Join("; ", array));
-            //Console.WriteLine("firstordefault");
-            //Func<int, bool> serchItem = x => x > 22;
-            //int result2 = arrayS.FirstOrDefault(serchItem);
-            //int result = arrayS.FirstOrDefault(item => item > 10);
-            //Console.WriteLine($"firstordefault {result}");
-            //Func<int, int, int> ourDel = (x, y) => x + y;
-            //Console.WriteLine(ourDel(1, 2));
-            //Console.WriteLine("Hello");
+            var array = new CustomClass<string>(5);
+            array.Show();
+            array.AddValue("hello");
+            array.AddValue("world");
+            array.AddValue("and");
+            array.Show();
+            array.RemoveByIndex(0);
+            array.RemoveByValue("and");
+            Console.WriteLine(array.SearchIndex("world"));
+            array.Show();
+            List<int> arrayS = new List<int>(20);
+            Console.WriteLine(arrayS.FirstOrDefault(x => x > 1));
+            Console.WriteLine(arrayS.FindIndex(x => x > 4));
+            for (int i = 0; i < arrayS.Count; i++)
+            {
+                if (arrayS[i] == 5)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+            Console.WriteLine(string.Join("; ", array));
+            arrayS.Sort();
+            Console.WriteLine(string.Join("; ", array));
+            Console.WriteLine("firstordefault");
+            Func<int, bool> serchItem = x => x > 22;
+            int result2 = arrayS.FirstOrDefault(serchItem);
+            int result = arrayS.FirstOrDefault(item => item > 10);
+            Console.WriteLine($"firstordefault {result}");
+            Func<int, int, int> ourDel = (x, y) => x + y;
+            Console.WriteLine(ourDel(1, 2));
+            Console.WriteLine("Hello");
 
-            //List<int> list = new List<int>();
-            //Random random = new Random();
-            //for(int i = 0; i <20; i++)
-            //{
-            //    list.Add(i);
-            //}
-            //LinkedList<int> linkedlist = new LinkedList<int>();
-            //for (int i = 0; i < 20; i++)
-            //{
-            //    linkedlist.AddLast(i);
-            //}
-            //Stack<int> stack = new Stack<int>();
-            //for (int i = 0; i < 20; i++)
-            //{
-            //    stack.Push(i);
-            //}
-            //Dictionary<int,string> dictionary = new Dictionary<int,string>();
-            //for (int i = 0; i < 20; i++)
-            //{
-            //    int value = random.Next(0, 500);
-            //    string text = $"Hello {i} element";
-            //    dictionary.Add(i,text);
-            //}
-            //foreach(int item in list)
-            //{
-            //    Console.WriteLine(item);
-            //}
-            //Console.WriteLine();
-            //foreach (int item in linkedlist)
-            //{
-            //    Console.WriteLine(item);
-            //}
-            //Console.WriteLine();
-            //foreach (int item in stack)
-            //{
-            //    Console.WriteLine(item);
-            //}
-            //Console.WriteLine();
-            //foreach (var item in dictionary)
-            //{
-            //    Console.WriteLine(item);
-            //}
-
-
-            TransportSystemCity minsk = new TransportSystemCity();
-            Plane aeroflot = new Plane("vesna", 777, 25);
-            Bus avtobus = new Bus("Икарус", 91, 10);
-            Ship lodka = new Ship("Теплоход Заря", 5, 10);
-            minsk.SetInAirport(aeroflot);
-            minsk.SetInBusStation(avtobus);
-            minsk.SetInPort(lodka);
-            Console.WriteLine("----BuyPlaneTicket---");
-            Console.WriteLine(minsk.BuyPlaneTicket(777, 20));
-            Console.WriteLine("----BuyBusTicket-----");
-            Console.WriteLine(minsk.BuyBusTicket(91, 15));
-            Console.WriteLine("----BuyShipTicket----");
-            Console.WriteLine(minsk.BuyShipTicket(8, 10));
-
-
-
-
-
-
+            List<int> list = new List<int>();
+            Random random = new Random();
+            for (int i = 0; i < 20; i++)
+            {
+                list.Add(i);
+            }
+            LinkedList<int> linkedlist = new LinkedList<int>();
+            for (int i = 0; i < 20; i++)
+            {
+                linkedlist.AddLast(i);
+            }
+            Stack<int> stack = new Stack<int>();
+            for (int i = 0; i < 20; i++)
+            {
+                stack.Push(i);
+            }
+            Dictionary<int, string> dictionary = new Dictionary<int, string>();
+            for (int i = 0; i < 20; i++)
+            {
+                int value = random.Next(0, 500);
+                string text = $"Hello {i} element";
+                dictionary.Add(i, text);
+            }
+            foreach (int item in list)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
+            foreach (int item in linkedlist)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
+            foreach (int item in stack)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
+            foreach (var item in dictionary)
+            {
+                Console.WriteLine(item);
+            }
 
 
 

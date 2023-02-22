@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -26,12 +27,16 @@ namespace TaskApplicatioLinq.Extensions
             }
             throw new Exception("нет такого формата");
         }
-        public static string FileNameInExplorer(this FileTypes routefile)
+        public static string FileNameInExplorer(this string routefile)
         {
-            if (Enum.IsDefined(routefile))
+            if (string.IsNullOrEmpty(routefile)) return null;
+            string[] route = routefile.Split("/");
+            string[] fileType = route[route.Length - 1].Split(".");
+            object format = fileType[fileType.Length - 1].Remove(0);
+            if (Enum.IsDefined(typeof(FileTypes), format))
             {
 
-                return $"имя файла";
+                return $"{route[route.Length - 1]}";
             }
             throw new Exception("нет такого формата");
         }
