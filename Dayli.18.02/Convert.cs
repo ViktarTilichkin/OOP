@@ -32,5 +32,18 @@ namespace Dayli._18._02
             return string.Join("", result);
 
         }
+        // Создайте метод расширения для определения среднего значения интервала массива/коллекции чисел.
+        // Пользователь должен вводить индексы начала и конца интервала для подсчёта среднего значения. 
+        public static double Avaredge(this int[] array, int startIndex, int finichIndex)
+        {
+            if (0 > startIndex || startIndex > finichIndex || array.Length <= finichIndex) throw new Exception("error index");
+            double temp = 0;
+            for (int i = startIndex; i <= finichIndex; i++)
+            {
+                temp += array[i];
+            }
+            return temp / (finichIndex - startIndex + 1);
+        }
     }
+
 }
