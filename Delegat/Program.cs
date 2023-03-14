@@ -1,5 +1,6 @@
 ﻿using Delegat;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Net.NetworkInformation;
 using System.Runtime.CompilerServices;
@@ -84,6 +85,21 @@ namespace MyApp
             string result = SortString(text);
             Console.WriteLine(result);
             result = SortStringReg(text);
+
+            List<User> user = new List<User>();
+            user.Add(new User(1, "name", 22));
+            user.Add(new User(2, "name2", 23));
+            user.Add(new User(3, "name3", 24));
+            user.Add(new User(4, "name4", 25));
+
+            
+            Dictionary<int, User> list = new Dictionary<int, User>();
+
+            foreach (var item in user)
+            {
+                if (list.ContainsKey(item.Id)) continue;
+                list.Add(item.Id, item);
+            }
 
         }
         public static void DiscriminantCalculate(double a, double b, double c)
