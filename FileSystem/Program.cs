@@ -20,7 +20,7 @@ namespace FileSystem
                 sw2.WriteLine("人人 都 爱 喝可乐");
                 Console.WriteLine("人人 都 爱 喝可乐");
                 sw2.WriteLine("блабла");
-                sw2?.Close();
+                sw2?.Close();  
             }
             catch (Exception ex)
             {
