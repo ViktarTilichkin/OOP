@@ -20,7 +20,7 @@ public class UnionPay : AccountPayment
         }
         return false;
     }
-
+    
     public override decimal SetMoney(decimal money)
     {
         // switch (money)
